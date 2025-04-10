@@ -1,0 +1,4 @@
+TX_ENV = PRODUCTION
+TX_APP_NAME = Git admin
+TX_APP_BUNDLE_ID = com.tx.gitadmin
+TX_API_HOST = api.github.com

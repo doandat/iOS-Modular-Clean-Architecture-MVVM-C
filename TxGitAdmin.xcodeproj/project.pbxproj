@@ -6,6 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B013F6CC2DA7914C00952D49 /* TxDeeplink in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6CB2DA7914C00952D49 /* TxDeeplink */; };
+		B013F6CE2DA7914C00952D49 /* TxDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6CD2DA7914C00952D49 /* TxDesignSystem */; };
+		B013F6D02DA7914C00952D49 /* TxFont in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6CF2DA7914C00952D49 /* TxFont */; };
+		B013F6D22DA7914C00952D49 /* TxTheme in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D12DA7914C00952D49 /* TxTheme */; };
+		B013F6D42DA7914C00952D49 /* TxUIComponent in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D32DA7914C00952D49 /* TxUIComponent */; };
+		B013F6D62DA7914C00952D49 /* TxFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D52DA7914C00952D49 /* TxFoundation */; };
+		B013F6D82DA7914C00952D49 /* TxGithubProfiles in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D72DA7914C00952D49 /* TxGithubProfiles */; };
+		B013F6DA2DA7914C00952D49 /* TxLocalization in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D92DA7914C00952D49 /* TxLocalization */; };
+		B013F6DC2DA7914C00952D49 /* TxLogger in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6DB2DA7914C00952D49 /* TxLogger */; };
+		B013F6DE2DA7914C00952D49 /* TxNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6DD2DA7914C00952D49 /* TxNetworking */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B0C6CE7A2DA6ACDA0074D216 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B06B04482DA790DD0008634F /* TxGithubProfiles */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxGithubProfiles; sourceTree = "<group>"; };
+		B06B044A2DA790DD0008634F /* TxDeeplink */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxDeeplink; sourceTree = "<group>"; };
+		B06B044B2DA790DD0008634F /* TxDesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxDesignSystem; sourceTree = "<group>"; };
+		B06B044C2DA790DD0008634F /* TxFoundation */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxFoundation; sourceTree = "<group>"; };
+		B06B044D2DA790DD0008634F /* TxLocalization */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxLocalization; sourceTree = "<group>"; };
+		B06B044E2DA790DD0008634F /* TxLogger */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxLogger; sourceTree = "<group>"; };
+		B06B044F2DA790DD0008634F /* TxNetworking */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = TxNetworking; sourceTree = "<group>"; };
 		B0C6CE682DA6ACD80074D216 /* TxGitAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TxGitAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C6CE792DA6ACDA0074D216 /* TxGitAdminTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TxGitAdminTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0C6CE832DA6ACDA0074D216 /* TxGitAdminUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TxGitAdminUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +72,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B013F6CC2DA7914C00952D49 /* TxDeeplink in Frameworks */,
+				B013F6D02DA7914C00952D49 /* TxFont in Frameworks */,
+				B013F6D82DA7914C00952D49 /* TxGithubProfiles in Frameworks */,
+				B013F6DA2DA7914C00952D49 /* TxLocalization in Frameworks */,
+				B013F6DC2DA7914C00952D49 /* TxLogger in Frameworks */,
+				B013F6D42DA7914C00952D49 /* TxUIComponent in Frameworks */,
+				B013F6DE2DA7914C00952D49 /* TxNetworking in Frameworks */,
+				B013F6D22DA7914C00952D49 /* TxTheme in Frameworks */,
+				B013F6CE2DA7914C00952D49 /* TxDesignSystem in Frameworks */,
+				B013F6D62DA7914C00952D49 /* TxFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +102,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B013F6CA2DA7914C00952D49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B06B04492DA790DD0008634F /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B06B04482DA790DD0008634F /* TxGithubProfiles */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B06B04512DA790DD0008634F /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B06B044A2DA790DD0008634F /* TxDeeplink */,
+				B06B044B2DA790DD0008634F /* TxDesignSystem */,
+				B06B044C2DA790DD0008634F /* TxFoundation */,
+				B06B044D2DA790DD0008634F /* TxLocalization */,
+				B06B044E2DA790DD0008634F /* TxLogger */,
+				B06B044F2DA790DD0008634F /* TxNetworking */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 		B0C6CE5F2DA6ACD80074D216 = {
 			isa = PBXGroup;
 			children = (
+				B06B04492DA790DD0008634F /* Features */,
+				B06B04512DA790DD0008634F /* Packages */,
 				B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */,
 				B0C6CE7C2DA6ACDA0074D216 /* TxGitAdminTests */,
 				B0C6CE862DA6ACDA0074D216 /* TxGitAdminUITests */,
+				B013F6CA2DA7914C00952D49 /* Frameworks */,
 				B0C6CE692DA6ACD80074D216 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +173,16 @@
 			);
 			name = TxGitAdmin;
 			packageProductDependencies = (
+				B013F6CB2DA7914C00952D49 /* TxDeeplink */,
+				B013F6CD2DA7914C00952D49 /* TxDesignSystem */,
+				B013F6CF2DA7914C00952D49 /* TxFont */,
+				B013F6D12DA7914C00952D49 /* TxTheme */,
+				B013F6D32DA7914C00952D49 /* TxUIComponent */,
+				B013F6D52DA7914C00952D49 /* TxFoundation */,
+				B013F6D72DA7914C00952D49 /* TxGithubProfiles */,
+				B013F6D92DA7914C00952D49 /* TxLocalization */,
+				B013F6DB2DA7914C00952D49 /* TxLogger */,
+				B013F6DD2DA7914C00952D49 /* TxNetworking */,
 			);
 			productName = TxGitAdmin;
 			productReference = B0C6CE682DA6ACD80074D216 /* TxGitAdmin.app */;
@@ -195,6 +266,8 @@
 			);
 			mainGroup = B0C6CE5F2DA6ACD80074D216;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B0C6CE692DA6ACD80074D216 /* Products */;
 			projectDirPath = "";
@@ -269,8 +342,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		B0C6CE8B2DA6ACDA0074D216 /* Debug */ = {
+		B056979B2DA7FF37009668C1 /* Sit_Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */;
+			baseConfigurationReferenceRelativePath = Sources/Configs/Env/Sit.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -328,10 +403,459 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
-			name = Debug;
+			name = Sit_Debug;
 		};
-		B0C6CE8C2DA6ACDA0074D216 /* Release */ = {
+		B056979C2DA7FF37009668C1 /* Sit_Debug */ = {
 			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TxGitAdmin/TxGitAdmin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TxGitAdmin/Preview Content\"";
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "${TX_APP_BUNDLE_ID}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Sit_Debug;
+		};
+		B056979D2DA7FF37009668C1 /* Sit_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdminTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxGitAdmin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxGitAdmin";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Sit_Debug;
+		};
+		B056979E2DA7FF37009668C1 /* Sit_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdminUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = TxGitAdmin;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Sit_Debug;
+		};
+		B056979F2DA7FF42009668C1 /* Uat_Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */;
+			baseConfigurationReferenceRelativePath = Sources/Configs/Env/UAT.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Uat_Debug;
+		};
+		B05697A02DA7FF42009668C1 /* Uat_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TxGitAdmin/TxGitAdmin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TxGitAdmin/Preview Content\"";
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "${TX_APP_BUNDLE_ID}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Uat_Debug;
+		};
+		B05697A12DA7FF42009668C1 /* Uat_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdminTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxGitAdmin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxGitAdmin";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Uat_Debug;
+		};
+		B05697A22DA7FF42009668C1 /* Uat_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdminUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = TxGitAdmin;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Uat_Debug;
+		};
+		B05697A32DA7FF4C009668C1 /* Pilot_Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */;
+			baseConfigurationReferenceRelativePath = Sources/Configs/Env/Pilot.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Pilot_Debug;
+		};
+		B05697A42DA7FF4C009668C1 /* Pilot_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TxGitAdmin/TxGitAdmin.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TxGitAdmin/Preview Content\"";
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "${TX_APP_BUNDLE_ID}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Pilot_Debug;
+		};
+		B05697A52DA7FF4C009668C1 /* Pilot_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdminTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxGitAdmin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxGitAdmin";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Pilot_Debug;
+		};
+		B05697A62DA7FF4C009668C1 /* Pilot_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdminUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = TxGitAdmin;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Pilot_Debug;
+		};
+		B0C6CE8B2DA6ACDA0074D216 /* Dev_Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */;
+			baseConfigurationReferenceRelativePath = Sources/Configs/Env/Dev.xcconfig;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Dev_Debug;
+		};
+		B0C6CE8C2DA6ACDA0074D216 /* Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */;
+			baseConfigurationReferenceRelativePath = Sources/Configs/Env/Production.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -381,9 +905,9 @@
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
-			name = Release;
+			name = Production;
 		};
-		B0C6CE8E2DA6ACDA0074D216 /* Debug */ = {
+		B0C6CE8E2DA6ACDA0074D216 /* Dev_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -396,6 +920,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -406,23 +931,24 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdmin;
+				PRODUCT_BUNDLE_IDENTIFIER = "${TX_APP_BUNDLE_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
-			name = Debug;
+			name = Dev_Debug;
 		};
-		B0C6CE8F2DA6ACDA0074D216 /* Release */ = {
+		B0C6CE8F2DA6ACDA0074D216 /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -435,6 +961,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -445,23 +972,24 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TxGitAdmin;
+				PRODUCT_BUNDLE_IDENTIFIER = "${TX_APP_BUNDLE_ID}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2,7";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
-			name = Release;
+			name = Production;
 		};
-		B0C6CE912DA6ACDA0074D216 /* Debug */ = {
+		B0C6CE912DA6ACDA0074D216 /* Dev_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -482,9 +1010,9 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxGitAdmin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxGitAdmin";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
-			name = Debug;
+			name = Dev_Debug;
 		};
-		B0C6CE922DA6ACDA0074D216 /* Release */ = {
+		B0C6CE922DA6ACDA0074D216 /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,9 +1033,9 @@
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxGitAdmin.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxGitAdmin";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
-			name = Release;
+			name = Production;
 		};
-		B0C6CE942DA6ACDA0074D216 /* Debug */ = {
+		B0C6CE942DA6ACDA0074D216 /* Dev_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -527,9 +1055,9 @@
 				TEST_TARGET_NAME = TxGitAdmin;
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
-			name = Debug;
+			name = Dev_Debug;
 		};
-		B0C6CE952DA6ACDA0074D216 /* Release */ = {
+		B0C6CE952DA6ACDA0074D216 /* Production */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -549,7 +1077,7 @@
 				TEST_TARGET_NAME = TxGitAdmin;
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
-			name = Release;
+			name = Production;
 		};
 /* End XCBuildConfiguration section */
 
@@ -557,40 +1085,95 @@
 		B0C6CE632DA6ACD80074D216 /* Build configuration list for PBXProject "TxGitAdmin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B0C6CE8B2DA6ACDA0074D216 /* Debug */,
-				B0C6CE8C2DA6ACDA0074D216 /* Release */,
+				B0C6CE8B2DA6ACDA0074D216 /* Dev_Debug */,
+				B05697A32DA7FF4C009668C1 /* Pilot_Debug */,
+				B056979F2DA7FF42009668C1 /* Uat_Debug */,
+				B056979B2DA7FF37009668C1 /* Sit_Debug */,
+				B0C6CE8C2DA6ACDA0074D216 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 		B0C6CE8D2DA6ACDA0074D216 /* Build configuration list for PBXNativeTarget "TxGitAdmin" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B0C6CE8E2DA6ACDA0074D216 /* Debug */,
-				B0C6CE8F2DA6ACDA0074D216 /* Release */,
+				B0C6CE8E2DA6ACDA0074D216 /* Dev_Debug */,
+				B05697A42DA7FF4C009668C1 /* Pilot_Debug */,
+				B05697A02DA7FF42009668C1 /* Uat_Debug */,
+				B056979C2DA7FF37009668C1 /* Sit_Debug */,
+				B0C6CE8F2DA6ACDA0074D216 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 		B0C6CE902DA6ACDA0074D216 /* Build configuration list for PBXNativeTarget "TxGitAdminTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B0C6CE912DA6ACDA0074D216 /* Debug */,
-				B0C6CE922DA6ACDA0074D216 /* Release */,
+				B0C6CE912DA6ACDA0074D216 /* Dev_Debug */,
+				B05697A52DA7FF4C009668C1 /* Pilot_Debug */,
+				B05697A12DA7FF42009668C1 /* Uat_Debug */,
+				B056979D2DA7FF37009668C1 /* Sit_Debug */,
+				B0C6CE922DA6ACDA0074D216 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 		B0C6CE932DA6ACDA0074D216 /* Build configuration list for PBXNativeTarget "TxGitAdminUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				B0C6CE942DA6ACDA0074D216 /* Debug */,
-				B0C6CE952DA6ACDA0074D216 /* Release */,
+				B0C6CE942DA6ACDA0074D216 /* Dev_Debug */,
+				B05697A62DA7FF4C009668C1 /* Pilot_Debug */,
+				B05697A22DA7FF42009668C1 /* Uat_Debug */,
+				B056979E2DA7FF37009668C1 /* Sit_Debug */,
+				B0C6CE952DA6ACDA0074D216 /* Production */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Production;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B013F6CB2DA7914C00952D49 /* TxDeeplink */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxDeeplink;
+		};
+		B013F6CD2DA7914C00952D49 /* TxDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxDesignSystem;
+		};
+		B013F6CF2DA7914C00952D49 /* TxFont */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxFont;
+		};
+		B013F6D12DA7914C00952D49 /* TxTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxTheme;
+		};
+		B013F6D32DA7914C00952D49 /* TxUIComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxUIComponent;
+		};
+		B013F6D52DA7914C00952D49 /* TxFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxFoundation;
+		};
+		B013F6D72DA7914C00952D49 /* TxGithubProfiles */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxGithubProfiles;
+		};
+		B013F6D92DA7914C00952D49 /* TxLocalization */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxLocalization;
+		};
+		B013F6DB2DA7914C00952D49 /* TxLogger */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxLogger;
+		};
+		B013F6DD2DA7914C00952D49 /* TxNetworking */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxNetworking;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B0C6CE602DA6ACD80074D216 /* Project object */;
 }

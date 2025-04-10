@@ -1,0 +1,4 @@
+TX_ENV = UAT
+TX_APP_NAME = Git admin - UAT
+TX_APP_BUNDLE_ID = com.tx.gitadmin.uat
+TX_API_HOST = api.github.com

@@ -1,0 +1,642 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B06B03972DA779D00008634F /* TxDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = B06B03962DA779D00008634F /* TxDesignSystem */; };
+		B06B03992DA779D00008634F /* TxFont in Frameworks */ = {isa = PBXBuildFile; productRef = B06B03982DA779D00008634F /* TxFont */; };
+		B06B039B2DA779D00008634F /* TxTheme in Frameworks */ = {isa = PBXBuildFile; productRef = B06B039A2DA779D00008634F /* TxTheme */; };
+		B06B039D2DA779D00008634F /* TxUIComponent in Frameworks */ = {isa = PBXBuildFile; productRef = B06B039C2DA779D00008634F /* TxUIComponent */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B06B03782DA779440008634F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B06B035E2DA779430008634F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B06B03652DA779430008634F;
+			remoteInfo = TxDesignSystemExample;
+		};
+		B06B03822DA779440008634F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B06B035E2DA779430008634F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B06B03652DA779430008634F;
+			remoteInfo = TxDesignSystemExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B06B03662DA779430008634F /* TxDesignSystemExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TxDesignSystemExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06B03772DA779440008634F /* TxDesignSystemExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TxDesignSystemExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06B03812DA779440008634F /* TxDesignSystemExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TxDesignSystemExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		B06B03682DA779430008634F /* TxDesignSystemExample */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TxDesignSystemExample;
+			sourceTree = "<group>";
+		};
+		B06B037A2DA779440008634F /* TxDesignSystemExampleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TxDesignSystemExampleTests;
+			sourceTree = "<group>";
+		};
+		B06B03842DA779440008634F /* TxDesignSystemExampleUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = TxDesignSystemExampleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B06B03632DA779430008634F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B06B039B2DA779D00008634F /* TxTheme in Frameworks */,
+				B06B03972DA779D00008634F /* TxDesignSystem in Frameworks */,
+				B06B039D2DA779D00008634F /* TxUIComponent in Frameworks */,
+				B06B03992DA779D00008634F /* TxFont in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06B03742DA779440008634F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06B037E2DA779440008634F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B06B035D2DA779430008634F = {
+			isa = PBXGroup;
+			children = (
+				B06B03682DA779430008634F /* TxDesignSystemExample */,
+				B06B037A2DA779440008634F /* TxDesignSystemExampleTests */,
+				B06B03842DA779440008634F /* TxDesignSystemExampleUITests */,
+				B06B03672DA779430008634F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B06B03672DA779430008634F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B06B03662DA779430008634F /* TxDesignSystemExample.app */,
+				B06B03772DA779440008634F /* TxDesignSystemExampleTests.xctest */,
+				B06B03812DA779440008634F /* TxDesignSystemExampleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B06B03652DA779430008634F /* TxDesignSystemExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B06B038B2DA779450008634F /* Build configuration list for PBXNativeTarget "TxDesignSystemExample" */;
+			buildPhases = (
+				B06B03622DA779430008634F /* Sources */,
+				B06B03632DA779430008634F /* Frameworks */,
+				B06B03642DA779430008634F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				B06B03682DA779430008634F /* TxDesignSystemExample */,
+			);
+			name = TxDesignSystemExample;
+			packageProductDependencies = (
+				B06B03962DA779D00008634F /* TxDesignSystem */,
+				B06B03982DA779D00008634F /* TxFont */,
+				B06B039A2DA779D00008634F /* TxTheme */,
+				B06B039C2DA779D00008634F /* TxUIComponent */,
+			);
+			productName = TxDesignSystemExample;
+			productReference = B06B03662DA779430008634F /* TxDesignSystemExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B06B03762DA779440008634F /* TxDesignSystemExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B06B038E2DA779450008634F /* Build configuration list for PBXNativeTarget "TxDesignSystemExampleTests" */;
+			buildPhases = (
+				B06B03732DA779440008634F /* Sources */,
+				B06B03742DA779440008634F /* Frameworks */,
+				B06B03752DA779440008634F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B06B03792DA779440008634F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B06B037A2DA779440008634F /* TxDesignSystemExampleTests */,
+			);
+			name = TxDesignSystemExampleTests;
+			packageProductDependencies = (
+			);
+			productName = TxDesignSystemExampleTests;
+			productReference = B06B03772DA779440008634F /* TxDesignSystemExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B06B03802DA779440008634F /* TxDesignSystemExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B06B03912DA779450008634F /* Build configuration list for PBXNativeTarget "TxDesignSystemExampleUITests" */;
+			buildPhases = (
+				B06B037D2DA779440008634F /* Sources */,
+				B06B037E2DA779440008634F /* Frameworks */,
+				B06B037F2DA779440008634F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B06B03832DA779440008634F /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B06B03842DA779440008634F /* TxDesignSystemExampleUITests */,
+			);
+			name = TxDesignSystemExampleUITests;
+			packageProductDependencies = (
+			);
+			productName = TxDesignSystemExampleUITests;
+			productReference = B06B03812DA779440008634F /* TxDesignSystemExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B06B035E2DA779430008634F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					B06B03652DA779430008634F = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					B06B03762DA779440008634F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B06B03652DA779430008634F;
+					};
+					B06B03802DA779440008634F = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = B06B03652DA779430008634F;
+					};
+				};
+			};
+			buildConfigurationList = B06B03612DA779430008634F /* Build configuration list for PBXProject "TxDesignSystemExample" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B06B035D2DA779430008634F;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B06B03952DA779D00008634F /* XCLocalSwiftPackageReference "../../TxDesignSystem" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B06B03672DA779430008634F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B06B03652DA779430008634F /* TxDesignSystemExample */,
+				B06B03762DA779440008634F /* TxDesignSystemExampleTests */,
+				B06B03802DA779440008634F /* TxDesignSystemExampleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B06B03642DA779430008634F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06B03752DA779440008634F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06B037F2DA779440008634F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B06B03622DA779430008634F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06B03732DA779440008634F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B06B037D2DA779440008634F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B06B03792DA779440008634F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B06B03652DA779430008634F /* TxDesignSystemExample */;
+			targetProxy = B06B03782DA779440008634F /* PBXContainerItemProxy */;
+		};
+		B06B03832DA779440008634F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B06B03652DA779430008634F /* TxDesignSystemExample */;
+			targetProxy = B06B03822DA779440008634F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B06B03892DA779450008634F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B06B038A2DA779450008634F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		B06B038C2DA779450008634F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TxDesignSystemExample/TxDesignSystemExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TxDesignSystemExample/Preview Content\"";
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxDesignSystemExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B06B038D2DA779450008634F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TxDesignSystemExample/TxDesignSystemExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TxDesignSystemExample/Preview Content\"";
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxDesignSystemExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator xros xrsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		B06B038F2DA779450008634F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxDesignSystemExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxDesignSystemExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxDesignSystemExample";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B06B03902DA779450008634F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxDesignSystemExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TxDesignSystemExample.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TxDesignSystemExample";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		B06B03922DA779450008634F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxDesignSystemExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = TxDesignSystemExample;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		B06B03932DA779450008634F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N5J9CB2NJD;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.TxDesignSystemExampleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = TxDesignSystemExample;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B06B03612DA779430008634F /* Build configuration list for PBXProject "TxDesignSystemExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06B03892DA779450008634F /* Debug */,
+				B06B038A2DA779450008634F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B06B038B2DA779450008634F /* Build configuration list for PBXNativeTarget "TxDesignSystemExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06B038C2DA779450008634F /* Debug */,
+				B06B038D2DA779450008634F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B06B038E2DA779450008634F /* Build configuration list for PBXNativeTarget "TxDesignSystemExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06B038F2DA779450008634F /* Debug */,
+				B06B03902DA779450008634F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B06B03912DA779450008634F /* Build configuration list for PBXNativeTarget "TxDesignSystemExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B06B03922DA779450008634F /* Debug */,
+				B06B03932DA779450008634F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B06B03952DA779D00008634F /* XCLocalSwiftPackageReference "../../TxDesignSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../TxDesignSystem;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B06B03962DA779D00008634F /* TxDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxDesignSystem;
+		};
+		B06B03982DA779D00008634F /* TxFont */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxFont;
+		};
+		B06B039A2DA779D00008634F /* TxTheme */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxTheme;
+		};
+		B06B039C2DA779D00008634F /* TxUIComponent */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxUIComponent;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = B06B035E2DA779430008634F /* Project object */;
+}

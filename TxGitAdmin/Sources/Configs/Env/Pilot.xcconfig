@@ -1,0 +1,4 @@
+TX_ENV = Pilot
+TX_APP_NAME = Git admin - PILOT
+TX_APP_BUNDLE_ID = com.tx.gitadmin.pilot
+TX_API_HOST = api.github.com

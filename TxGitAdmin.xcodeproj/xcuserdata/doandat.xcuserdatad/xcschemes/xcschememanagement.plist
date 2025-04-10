@@ -4,10 +4,48 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>TxGitAdmin.xcscheme_^#shared#^_</key>
+		<key>TxGitAdmin_dev.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>TxGitAdmin_pilot.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
+		<key>TxGitAdmin_production.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>4</integer>
+		</dict>
+		<key>TxGitAdmin_sit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
+		<key>TxGitAdmin_uat.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>B0C6CE672DA6ACD80074D216</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0C6CE782DA6ACDA0074D216</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0C6CE822DA6ACDA0074D216</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

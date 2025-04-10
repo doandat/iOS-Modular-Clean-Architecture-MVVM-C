@@ -1,0 +1,4 @@
+TX_ENV = SIT
+TX_APP_NAME = Git admin - SIT
+TX_APP_BUNDLE_ID = com.tx.gitadmin.sit
+TX_API_HOST = api.github.com
