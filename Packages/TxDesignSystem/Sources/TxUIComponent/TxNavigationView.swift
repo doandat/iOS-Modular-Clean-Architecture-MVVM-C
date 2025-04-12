@@ -48,7 +48,7 @@ extension TxDesignSystem.UIComponent {
 
         private var titleView: some View {
             Text(title)
-                .modifier(TxFont.style(TxFont.Typography.titleSemibold(align: .center)))
+                .modifier(TxFont.style(TxFont.Typography.h4SemiBold(align: .center)))
                 .foregroundColor(themeManager.selectedColor.textPrimary)
                 .frame(maxWidth: .infinity, alignment: .center)
                 .padding(.trailing, TxSize.size1100.rawValue)

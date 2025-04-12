@@ -241,7 +241,7 @@ public struct TxThemeColorDTO: Decodable {
             boderSuccess: "#4CAF50",
             boderBrand: "#4A90E2",
             boderHover: "#BDBDBD",
-            boderDefault: "#BDBDBD",
+            boderDefault: "#e8e8e8",
             boderDisable: "#E0E0E0",
             boderInverse: "#FFFFFF"
         )

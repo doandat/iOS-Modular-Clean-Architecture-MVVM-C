@@ -23,21 +23,21 @@ public final class TxGithubProfileCoordinator {
 
 extension TxGithubProfileCoordinator: TxGithubProfileNavigation {
     @MainActor public static func getRootView() -> any TxView {
-        let viewModel = TxAccountListViewModel()
-        let contentView = TxAccountListView(viewModel: viewModel)
+        let viewModel = TxUserListViewModel()
+        let contentView = TxUserListView(viewModel: viewModel)
         return contentView
     }
 
-    public func routeToAccountlist() {
-        let viewModel = TxAccountListViewModel()
-        let contentView = TxAccountListView(viewModel: viewModel)
+    public func routeToUserlist() {
+        let viewModel = TxUserListViewModel()
+        let contentView = TxUserListView(viewModel: viewModel)
         let controller = TxHostingController(rootView: contentView)
         self.navigationController.setViewControllers([controller], animated: false)
     }
 
-    public func routeToAccountDetail() {
-        let viewModel = TxAccountDetailViewModel()
-        let contentView = TxAccountDetailView(viewModel: viewModel)
+    public func routeToUserDetail(userId: String) {
+        let viewModel = TxUserDetailViewModel(userId: userId)
+        let contentView = TxUserDetailView(viewModel: viewModel)
         let controller = TxHostingController(rootView: contentView)
         self.navigationController.pushViewController(controller, animated: true)
     }

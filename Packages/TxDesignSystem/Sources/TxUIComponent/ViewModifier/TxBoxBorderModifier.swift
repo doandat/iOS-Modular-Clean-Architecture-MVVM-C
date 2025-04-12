@@ -11,7 +11,7 @@ public struct TxBoxBorderModifier: ViewModifier {
 
     public func body(content: Content) -> some View {
         content
-            .padding()
+            .padding(TxSize.size400.rawValue)
             .background(
                 RoundedRectangle(cornerRadius: borderInput.cornerRadius)
                     .fill(themeManager.selectedColor.backgroundWhite)

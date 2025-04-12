@@ -6,8 +6,9 @@
 //
 
 import Foundation
-import TxDeeplink
 import Resolver
+import TxDeeplink
+import TxFoundation
 
 public final class TxGithubProfileDeeplinkHandler: TxDeeplinkHandlerProtocol {
     public init() {}
@@ -30,9 +31,13 @@ public final class TxGithubProfileDeeplinkHandler: TxDeeplinkHandlerProtocol {
         }
         switch validPath {
         case .list:
-            coordinator.routeToAccountlist()
+            coordinator.routeToUserlist()
         case .detail:
-            coordinator.routeToAccountDetail()
+            let params = url.parseQueryParameters()
+            guard let userId = params["userId"] else {
+                return
+            }
+            coordinator.routeToUserDetail(userId: userId)
         }
     }
 }

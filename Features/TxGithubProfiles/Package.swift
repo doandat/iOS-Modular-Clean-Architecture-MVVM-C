@@ -16,12 +16,12 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins.git", exact: "0.57.1"),
         .package(url: "https://github.com/hmlongco/Resolver.git", exact: "1.5.1"),
+        .package(url: "https://github.com/kean/Nuke", exact: "12.8.0"),
         .package(path: "../../Packages/TxDesignSystem"),
         .package(path: "../../Packages/TxLogger"),
         .package(path: "../../Packages/TxFoundation"),
         .package(path: "../../Packages/TxDeeplink"),
-        .package(path: "../../Packages/TxLocalization"),
-        
+        .package(path: "../../Packages/TxLocalization"),  
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -34,6 +34,8 @@ let package = Package(
                 "TxFoundation",
                 "TxDeeplink",
                 "TxLocalization",
+                .product(name: "Nuke", package: "Nuke"),
+                .product(name: "NukeUI", package: "Nuke"),
                 .product(name: "TxDesignSystem", package: "TxDesignSystem"),
                 .product(name: "TxFont", package: "TxDesignSystem"),
                 .product(name: "TxTheme", package: "TxDesignSystem"),

@@ -1,2 +1,5 @@
-"githubprofile.account.list.title" = "Github Users";
-"githubprofile.account.detail.title" = "User Details";
+"githubprofile.user.list.title" = "Github Users";
+"githubprofile.user.detail.title" = "User Details";
+"githubprofile.user.detail.follower" = "Follower";
+"githubprofile.user.detail.following" = "Following";
+"githubprofile.user.detail.blog" = "Blog";

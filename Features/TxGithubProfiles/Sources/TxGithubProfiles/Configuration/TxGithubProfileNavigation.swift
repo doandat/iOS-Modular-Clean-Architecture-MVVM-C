@@ -10,7 +10,7 @@ import SwiftUI
 import TxUIComponent
 
 public protocol TxGithubProfileNavigation: AnyObject {
-    @MainActor func routeToAccountlist()
-    @MainActor func routeToAccountDetail()
+    @MainActor func routeToUserlist()
+    @MainActor func routeToUserDetail(userId: String)
     @MainActor func goBack()
 }

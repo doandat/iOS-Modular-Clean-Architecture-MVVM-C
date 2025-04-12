@@ -1,2 +1,5 @@
-"githubprofile.account.list.title" = "Github Users";
-"githubprofile.account.detail.title" = "User Details";
+"githubprofile.user.list.title" = "Danh sách tài khoản";
+"githubprofile.user.detail.title" = "Chi tiết";
+"githubprofile.user.detail.follower" = "Người theo dõi";
+"githubprofile.user.detail.following" = "Đang theo dõi";
+"githubprofile.user.detail.blog" = "Bài viết";

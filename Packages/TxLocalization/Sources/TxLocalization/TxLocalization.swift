@@ -19,7 +19,7 @@ public final class L10n: ObservableObject {
     
     public init() {
         let savedLanguage = UserDefaults.standard.string(forKey: L10n.languageUserDefaultsKey) ?? ""
-        self.currentLanguage = Language(rawValue: savedLanguage) ?? .vi
+        self.currentLanguage = Language(rawValue: savedLanguage) ?? .en
     }
     
     public func localized(key: String, _ args: CVarArg..., table: String = "Localizable", in bundle: Bundle) -> String {

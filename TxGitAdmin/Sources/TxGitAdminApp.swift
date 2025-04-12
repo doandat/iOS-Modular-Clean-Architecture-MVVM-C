@@ -12,6 +12,7 @@ import TxTheme
 import TxFont
 import TxLocalization
 import TxDeeplink
+import TxGithubProfiles
 
 @main
 struct TxGitAdminApp: App {
@@ -36,6 +37,7 @@ extension TxGitAdminApp {
     private func setupDI() {
         Resolver.register { TxThemeManager() }.scope(ResolverScope.application)
         Resolver.register { L10n() }.scope(ResolverScope.application)
+        TxGithubProfiles.Configuration().register()
     }
     
     private func initRootView() {
