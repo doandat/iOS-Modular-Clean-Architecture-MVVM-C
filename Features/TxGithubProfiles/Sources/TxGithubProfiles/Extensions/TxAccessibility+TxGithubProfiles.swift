@@ -10,14 +10,14 @@ extension TxAccessibility.GithubProfiles {
         public static let followLabel = "GithubProfile.FlowItem.FollowLabel"
         public static let followValue = "GithubProfile.FlowItem.FollowValue"
     }
-    
+
     public enum UserItem {
         public static let avatar = "GithubProfile.UserItem.Avatar"
         public static let name = "GithubProfile.UserItem.Name"
         public static let landingPageUrl = "GithubProfile.UserItem.LandingPageUrl"
         public static let location = "GithubProfile.UserItem.Location"
     }
-    
+
     public enum UserList {
         public static let title = "GithubProfile.UserList.Navigation.Title"
         public static let backButton = "GithubProfile.UserList.Navigation.BackButton"

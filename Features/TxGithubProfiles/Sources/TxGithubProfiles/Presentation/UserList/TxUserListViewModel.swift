@@ -11,21 +11,21 @@ final class TxUserListViewModel: ObservableObject {
     private(set) var lastestUserId = 0
     var isLoading = false
     @Published var hasMoreData = false
-    
+
     var hasData: Bool {
         return !users.isEmpty
     }
-    
+
     @LazyInjected
     private var navigation: TxGithubProfileNavigation
-    
+
     @Injected
     private var getUsersUseCase: TxGetUsersUseCase
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
+
     init() {}
-    
+
     @MainActor
     func loadInitialUsers() {
         guard !isLoading else { return }
@@ -73,12 +73,12 @@ final class TxUserListViewModel: ObservableObject {
             }
         }
     }
-    
+
     @MainActor
     func loadMoreData() {
         guard !isLoading, hasMoreData else { return }
         isLoading = true
-        
+
         Task { @MainActor in
             do {
                 let apiClient = Resolver.resolve(TxApiClientProtocol.self)
@@ -120,7 +120,7 @@ final class TxUserListViewModel: ObservableObject {
             }
         }
     }
-    
+
     @MainActor
     func gotoDetail(loginUsername: String) {
         navigation.routeToUserDetail(loginUsername: loginUsername)
@@ -131,7 +131,7 @@ extension TxUserListViewModel {
     enum UserListState: Equatable {
         case loading
         case data([TxUserItemUIModel])
-        
+
         static func == (lhs: UserListState, rhs: UserListState) -> Bool {
             switch (lhs, rhs) {
             case (.loading, .loading):

@@ -17,7 +17,7 @@ import TxLocalization
 
 public final class TxGithubProfileCoordinator {
     private let navigationController: UINavigationController
-    
+
     public init(rootViewController: UINavigationController) {
         self.navigationController = rootViewController
     }
@@ -29,25 +29,25 @@ extension TxGithubProfileCoordinator: TxGithubProfileNavigation {
         let contentView = TxUserListView(viewModel: viewModel)
         return contentView
     }
-    
+
     public func routeToUserlist() {
         let viewModel = TxUserListViewModel()
         let contentView = TxUserListView(viewModel: viewModel)
         let controller = TxHostingController(rootView: contentView)
         self.navigationController.setViewControllers([controller], animated: false)
     }
-    
+
     public func routeToUserDetail(loginUsername: String) {
         let viewModel = TxUserDetailViewModel(loginUsername: loginUsername)
         let contentView = TxUserDetailView(viewModel: viewModel)
         let controller = TxHostingController(rootView: contentView)
         self.navigationController.pushViewController(controller, animated: true)
     }
-    
+
     public func goBack() {
         self.navigationController.popViewController(animated: true)
     }
-    
+
     public func showAlert(
         title: String,
         message: String,
@@ -57,7 +57,7 @@ extension TxGithubProfileCoordinator: TxGithubProfileNavigation {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
-        
+
         alert.addAction(
             UIAlertAction(
                 title: "githubprofile.alert.common.retry".localization(),
@@ -66,7 +66,7 @@ extension TxGithubProfileCoordinator: TxGithubProfileNavigation {
                     retryAction()
                 })
         )
-        
+
         alert.addAction(
             UIAlertAction(
                 title: "githubprofile.alert.common.close".localization(),
@@ -75,8 +75,8 @@ extension TxGithubProfileCoordinator: TxGithubProfileNavigation {
                     closeAction()
                 })
         )
-        
+
         self.navigationController.present(alert, animated: false, completion: nil)
-        
+
     }
 }
