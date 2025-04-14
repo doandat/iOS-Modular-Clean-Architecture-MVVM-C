@@ -8,12 +8,22 @@
 import SwiftUI
 import TxDesignSystem
 
+/// Extension providing predefined typography styles.
+///
+/// This extension provides:
+/// - Heading styles (H1-H4)
+/// - Title styles
+/// - Base text styles
+/// - Small text styles
+/// - Caption styles
+/// - Subtitle styles
 extension TxDesignSystem.Fonts {
+    /// Collection of predefined typography styles.
     public struct Typography {
         private typealias FontName = TxDesignSystem.Fonts.FontName
 
-        // MARK: - H1
-
+        // MARK: - H1 Styles
+        /// H1 heading with bold weight.
         public static func h1Bold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.bold,
@@ -24,6 +34,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H1 heading with medium weight.
         public static func h1Medium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -34,8 +45,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - H2
-
+        // MARK: - H2 Styles
+        /// H2 heading with bold weight.
         public static func h2Bold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.bold,
@@ -46,6 +57,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H2 heading with semi-bold weight.
         public static func h2Semibold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.semibold,
@@ -56,6 +68,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H2 heading with medium weight.
         public static func h2Medium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -66,8 +79,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - H3
-
+        // MARK: - H3 Styles
+        /// H3 heading with bold weight.
         public static func h3Bold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.bold,
@@ -78,6 +91,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H3 heading with semi-bold weight.
         public static func h3Semibold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.semibold,
@@ -88,6 +102,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H3 heading with medium weight.
         public static func h3Medium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -98,8 +113,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - H4
-
+        // MARK: - H4 Styles
+        /// H4 heading with bold weight.
         public static func h4Bold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.bold,
@@ -110,6 +125,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H4 heading with semi-bold weight.
         public static func h4SemiBold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.semibold,
@@ -120,6 +136,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// H4 heading with medium weight.
         public static func h4Medium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -130,8 +147,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - Title
-
+        // MARK: - Title Styles
+        /// Title text with bold weight.
         public static func titleBold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.bold,
@@ -142,6 +159,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Title text with semi-bold weight.
         public static func titleSemibold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.semibold,
@@ -152,6 +170,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Title text with medium weight.
         public static func titleMedium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -162,8 +181,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - Base
-
+        // MARK: - Base Styles
+        /// Base text with semi-bold weight.
         public static func baseSemibold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.semibold,
@@ -174,6 +193,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Base text with medium weight.
         public static func baseMedium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -184,6 +204,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Base text with regular weight.
         public static func baseRegular(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.regular,
@@ -194,8 +215,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - Small
-
+        // MARK: - Small Styles
+        /// Small text with semi-bold weight.
         public static func smallSemibold(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.semibold,
@@ -206,6 +227,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Small text with medium weight.
         public static func smallMedium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -216,6 +238,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Small text with regular weight.
         public static func smallRegular(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.regular,
@@ -226,8 +249,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - Caption
-
+        // MARK: - Caption Styles
+        /// Caption text with medium weight.
         public static func captionMedium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,
@@ -238,6 +261,7 @@ extension TxDesignSystem.Fonts {
             )
         }
 
+        /// Caption text with regular weight.
         public static func captionRegular(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.regular,
@@ -248,8 +272,8 @@ extension TxDesignSystem.Fonts {
             )
         }
 
-        // MARK: - Subtitle
-
+        // MARK: - Subtitle Style
+        /// Subtitle text with medium weight.
         public static func subtitleMedium(align: TextAlignment = .leading) -> TypographyStyle {
             return TypographyStyle(
                 fontName: FontName.medium,

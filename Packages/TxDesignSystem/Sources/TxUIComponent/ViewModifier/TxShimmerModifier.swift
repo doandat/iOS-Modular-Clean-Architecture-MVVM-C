@@ -2,23 +2,42 @@
 //  TxShimmerModifier.swift
 //  TxDesignSystem
 //
-//  Created by doandat on 11/4/25.
+//  Created by doandat on 10/4/25.
 //
 
 import TxFoundation
 import SwiftUI
 
+/// Extension for adding shimmer effect to views.
 extension View {
+    /// Adds a shimmer effect to a view.
+    ///
+    /// - Parameters:
+    ///   - isLoading: Whether to show the shimmer effect
+    ///   - row: The number of shimmer rows
+    /// - Returns: A view with shimmer effect
     public func shimmer(isLoading: Bool, row: Int = 6) -> some View {
         modifier(TxShimmerModifier(isLoadingShimmer: isLoading, row: row))
     }
 }
 
-struct TxShimmerModifier: ViewModifier {
+/// A view modifier that adds a shimmering effect to a view.
+///
+/// This modifier provides:
+/// - Shimmering animation
+/// - Gradient overlay
+/// - Customizable appearance
+public struct TxShimmerModifier: ViewModifier {
+    /// Whether the shimmer effect is active
     var isLoadingShimmer: Bool
+    /// The number of shimmer rows
     var row: Int
 
-    func body(content: Content) -> some View {
+    /// Applies the modifier to a view.
+    ///
+    /// - Parameter content: The content view
+    /// - Returns: The modified view
+    public func body(content: Content) -> some View {
         ZStack {
             content
             if isLoadingShimmer {
@@ -37,15 +56,19 @@ struct TxShimmerModifier: ViewModifier {
     }
 }
 
+/// A row of shimmering content.
 struct TxShimmerRow: View {
+    /// The number of shimmer rows
     var row: Int
 
+    /// The body of the shimmer row.
     var body: some View {
         loadInitialDataView
             .padding(.horizontal, 12)
             .frame(height: heightRow)
     }
 
+    /// The shimmer content view.
     private var loadInitialDataView: some View {
         ForEach(0 ..< row, id: \.self) { index in
             VStack(spacing: 0) {
@@ -77,14 +100,17 @@ struct TxShimmerRow: View {
         }
     }
 
+    /// The shimmer color
     private var color: Color {
         Color.black.opacity(0.2)
     }
 
+    /// The corner radius
     private var cornerRadius: CGFloat {
         4
     }
 
+    /// The row height
     private var heightRow: CGFloat {
         92
     }

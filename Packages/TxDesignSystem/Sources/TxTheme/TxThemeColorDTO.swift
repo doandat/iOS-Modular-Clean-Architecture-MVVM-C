@@ -1,10 +1,18 @@
 import Foundation
 // swiftlint:disable type_body_length function_body_length
 
+/// Data transfer object for theme colors.
+///
+/// This struct provides:
+/// - Color definitions in hex format
+/// - Light and dark mode presets
+/// - Color categories (background, surface, text, icon, border)
 public struct TxThemeColorDTO: Decodable {
-    let backgroundGray: String
-    let backgroundWhite: String
-    // Surface
+    // Background colors
+    let backgroundPrimary: String
+    let backgroundSecondary: String
+    
+    // Surface colors
     let surfaceBrand: String
     let surfaceWhite: String
     let surfaceGray: String
@@ -23,8 +31,8 @@ public struct TxThemeColorDTO: Decodable {
     let surfacePending: String
     let surfaceSelected: String
     let surfaceHover: String
-
-    // Text
+    
+    // Text colors
     let textPrimary: String
     let textSecondary: String
     let textTertiary: String
@@ -42,8 +50,8 @@ public struct TxThemeColorDTO: Decodable {
     let textError: String
     let textPending: String
     let textWarning: String
-
-    // Icon
+    
+    // Icon colors
     let iconDefault: String
     let iconDisable: String
     let iconInverse: String
@@ -53,8 +61,8 @@ public struct TxThemeColorDTO: Decodable {
     let iconError: String
     let iconSuccess: String
     let iconWarning: String
-
-    // Border
+    
+    // Border colors
     let boderWarning: String
     let boderInformation: String
     let boderError: String
@@ -66,10 +74,70 @@ public struct TxThemeColorDTO: Decodable {
     let boderDefault: String
     let boderDisable: String
     let boderInverse: String
-
+    
+    /// Creates a new theme color DTO.
+    ///
+    /// - Parameters:
+    ///   - backgroundPrimary: Background primary color
+    ///   - backgroundSecondary: Background secondary color
+    ///   - surfaceBrand: Brand surface color
+    ///   - surfaceWhite: White surface color
+    ///   - surfaceGray: Gray surface color
+    ///   - surfaceDisable: Disabled surface color
+    ///   - surfaceBottomSheet: Bottom sheet surface color
+    ///   - surfacePopup: Popup surface color
+    ///   - surfaceWarningHighlight: Warning highlight surface color
+    ///   - surfaceWarning: Warning surface color
+    ///   - surfaceErrorHighlight: Error highlight surface color
+    ///   - surfaceError: Error surface color
+    ///   - surfaceSuccessHighlight: Success highlight surface color
+    ///   - surfaceSuccess: Success surface color
+    ///   - surfaceInformationHighlight: Information highlight surface color
+    ///   - surfaceInformation: Information surface color
+    ///   - surfacePendingHighlight: Pending highlight surface color
+    ///   - surfacePending: Pending surface color
+    ///   - surfaceSelected: Selected surface color
+    ///   - surfaceHover: Hover surface color
+    ///   - textPrimary: Primary text color
+    ///   - textSecondary: Secondary text color
+    ///   - textTertiary: Tertiary text color
+    ///   - textPlaceholder: Placeholder text color
+    ///   - textDisable: Disabled text color
+    ///   - textInverse: Inverse text color
+    ///   - textLink: Link text color
+    ///   - textLinkHover: Link hover text color
+    ///   - textLinkPressed: Link pressed text color
+    ///   - textBrand: Brand text color
+    ///   - textBrandHover: Brand hover text color
+    ///   - textBrandPressed: Brand pressed text color
+    ///   - textInformation: Information text color
+    ///   - textSuccess: Success text color
+    ///   - textError: Error text color
+    ///   - textPending: Pending text color
+    ///   - textWarning: Warning text color
+    ///   - iconDefault: Default icon color
+    ///   - iconDisable: Disabled icon color
+    ///   - iconInverse: Inverse icon color
+    ///   - iconBrand: Brand icon color
+    ///   - iconPending: Pending icon color
+    ///   - iconInformation: Information icon color
+    ///   - iconError: Error icon color
+    ///   - iconSuccess: Success icon color
+    ///   - iconWarning: Warning icon color
+    ///   - boderWarning: Warning border color
+    ///   - boderInformation: Information border color
+    ///   - boderError: Error border color
+    ///   - boderPending: Pending border color
+    ///   - boderFocus: Focus border color
+    ///   - boderSuccess: Success border color
+    ///   - boderBrand: Brand border color
+    ///   - boderHover: Hover border color
+    ///   - boderDefault: Default border color
+    ///   - boderDisable: Disabled border color
+    ///   - boderInverse: Inverse border color
     public init(
-        backgroundGray: String,
-        backgroundWhite: String,
+        backgroundPrimary: String,
+        backgroundSecondary: String,
         surfaceBrand: String,
         surfaceWhite: String,
         surfaceGray: String,
@@ -126,8 +194,8 @@ public struct TxThemeColorDTO: Decodable {
         boderDisable: String,
         boderInverse: String
     ) {
-        self.backgroundGray = backgroundGray
-        self.backgroundWhite = backgroundWhite
+        self.backgroundPrimary = backgroundPrimary
+        self.backgroundSecondary = backgroundSecondary
         self.surfaceBrand = surfaceBrand
         self.surfaceWhite = surfaceWhite
         self.surfaceGray = surfaceGray
@@ -184,11 +252,12 @@ public struct TxThemeColorDTO: Decodable {
         self.boderDisable = boderDisable
         self.boderInverse = boderInverse
     }
-
+    
+    /// Light mode color preset.
     public static var lightMode: TxThemeColorDTO {
         return .init(
-            backgroundGray: "#F5F5F5",
-            backgroundWhite: "#FFFFFF",
+            backgroundPrimary: "#F5F5F5",
+            backgroundSecondary: "#FFFFFF",
             surfaceBrand: "#4A90E2",
             surfaceWhite: "#FFFFFF",
             surfaceGray: "#E0E0E0",
@@ -246,11 +315,12 @@ public struct TxThemeColorDTO: Decodable {
             boderInverse: "#FFFFFF"
         )
     }
-
+    
+    /// Dark mode color preset.
     public static var darkMode: TxThemeColorDTO {
         return .init(
-            backgroundGray: "#121212",
-            backgroundWhite: "#1E1E1E",
+            backgroundPrimary: "#121212",
+            backgroundSecondary: "#1E1E1E",
             surfaceBrand: "#BB86FC",
             surfaceWhite: "#1E1E1E",
             surfaceGray: "#37474F",

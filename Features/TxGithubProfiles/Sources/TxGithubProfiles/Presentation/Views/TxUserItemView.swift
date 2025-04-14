@@ -12,10 +12,19 @@ import TxUIComponent
 import TxTheme
 import TxFont
 
+/// A view component that displays a GitHub user's information in either a list or detail context.
+///
+/// This view presents a user's:
+/// - Avatar image
+/// - Name
+/// - Additional information based on the display type (list or detail)
 struct TxUserItemView: View {
     @EnvironmentObject private var themeManager: TxThemeManager
 
+    /// The user data to display.
     let user: TxUserItemUIModel
+
+    /// The type of display context (list or detail).
     let type: UserUIType
 
     var body: some View {
@@ -26,10 +35,12 @@ struct TxUserItemView: View {
         }
         .frame(maxWidth: .infinity)
         .modifier(TxBoxBorderModifier())
-//        .background(.gray)
         .padding(.horizontal, TxSize.size600.rawValue)
     }
 
+    /// The avatar view component that displays the user's profile picture.
+    ///
+    /// Shows a placeholder if the image fails to load or is loading.
     var avatarView: some View {
         ZStack {
             RoundedRectangle(cornerRadius: TxSize.size300.rawValue)
@@ -52,6 +63,7 @@ struct TxUserItemView: View {
         }
     }
 
+    /// A placeholder view shown when the avatar image is loading or failed to load.
     var avatarPlaceholder: some View {
         ZStack {
             Spacer()
@@ -64,6 +76,11 @@ struct TxUserItemView: View {
         }
     }
 
+    /// The information view component that displays the user's details.
+    ///
+    /// Shows different information based on the display type:
+    /// - List type: Shows name and landing page URL
+    /// - Detail type: Shows name and location
     var infoView: some View {
         VStack(alignment: .leading, spacing: TxSize.size200.rawValue) {
             Text(user.name)
@@ -102,12 +119,16 @@ struct TxUserItemView: View {
 }
 
 extension TxUserItemView {
+    /// The type of user information display context.
     enum UserUIType {
+        /// Display in a list context, showing basic information.
         case list
+        /// Display in a detail context, showing additional information.
         case detail
     }
 }
 
+/// Preview provider for the TxUserItemView.
 struct UserItemView_Previews: PreviewProvider {
     static var previews: some View {
         TxUserItemView(

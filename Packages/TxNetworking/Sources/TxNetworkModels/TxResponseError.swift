@@ -7,16 +7,50 @@
 
 import Foundation
 
+/// A structure representing network and server errors in the application.
+///
+/// This struct provides detailed error information including:
+/// - Error type classification
+/// - Error messages
+/// - Error codes
+/// - Response data
+/// - Debug information
 public struct TxResponseError: LocalizedError {
-    public let errorType: ErrorType         // Loại lỗi (network, server, v.v.)
-    public let message: String?             // Mô tả lỗi
-    public let key: String?                 // Key định danh lỗi (có thể dùng để phân loại lỗi)
-    public let responseCode: Int?           // Mã trạng thái HTTP hoặc mã lỗi trả về từ server
-    public let errorCode: Int?              // Mã lỗi chi tiết từ server (nếu có)
+    /// The type of error that occurred
+    public let errorType: ErrorType
+    
+    /// A human-readable description of the error
+    public let message: String?
+    
+    /// A unique identifier for the error type
+    public let key: String?
+    
+    /// The HTTP status code or server response code
+    public let responseCode: Int?
+    
+    /// Detailed error code from the server
+    public let errorCode: Int?
+    
+    /// The raw response data from the server
     public let responseData: Data?
+    
+    /// The original error that caused this error
     public let otherError: Error?
-    public let debugDescription: String?    // Mô tả lỗi chi tiết (dành cho debug)
+    
+    /// Detailed error description for debugging purposes
+    public let debugDescription: String?
 
+    /// Creates a new TxResponseError instance.
+    ///
+    /// - Parameters:
+    ///   - errorType: The type of error
+    ///   - message: Optional error message
+    ///   - key: Optional error key
+    ///   - responseCode: Optional HTTP status code
+    ///   - errorCode: Optional detailed error code
+    ///   - responseData: Optional response data
+    ///   - otherError: Optional original error
+    ///   - debugDescription: Optional debug description
     public init(
         errorType: ErrorType,
         message: String? = nil,
@@ -39,21 +73,39 @@ public struct TxResponseError: LocalizedError {
 }
 
 extension TxResponseError {
-    public enum ErrorType: Sendable{
-        case network(NetworkErrorType)  // Lỗi kết nối mạng
-        case server                 // Lỗi từ server (ví dụ: lỗi HTTP, lỗi từ API)
-        case decoding             // Lỗi khi giải mã (decoding)
-        case unknown               // Lỗi không xác định
+    /// Enumeration defining the types of errors that can occur.
+    public enum ErrorType: Sendable {
+        /// Network-related errors
+        case network(NetworkErrorType)
+        
+        /// Server-side errors (HTTP errors, API errors)
+        case server
+        
+        /// Errors occurring during data decoding
+        case decoding
+        
+        /// Unknown or unclassified errors
+        case unknown
     }
 
-    public enum NetworkErrorType: Sendable{
+    /// Enumeration defining specific network error types.
+    public enum NetworkErrorType: Sendable {
+        /// No network connection available
         case noNetworkConnection
+        
+        /// Request timed out
         case requestTimeout
-        case unknown               // Lỗi kết nối mạng
+        
+        /// Unknown network error
+        case unknown
     }
 
+    /// Enumeration defining possible actions for network error alerts.
     public enum AlertActionNetworkError: Sendable {
+        /// Retry the failed operation
         case retry
+        
+        /// Cancel the operation
         case cancel
     }
 }

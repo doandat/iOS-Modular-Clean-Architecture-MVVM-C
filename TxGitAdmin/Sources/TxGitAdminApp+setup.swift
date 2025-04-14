@@ -22,11 +22,25 @@ import Atlantis
 #endif
 
 extension TxGitAdminApp {
+    /// Sets up debug tools and configurations for development builds.
+    ///
+    /// This method:
+    /// - Starts Atlantis for network debugging in DEBUG builds
+    /// - Does nothing in release builds
     func setupDebug() {
 #if DEBUG
         Atlantis.start()
 #endif
     }
+
+    /// Sets up dependency injection for the application.
+    ///
+    /// This method registers:
+    /// - Theme manager for application-wide theming
+    /// - Localization service for text translations
+    /// - API client for network requests
+    /// - Deep linking service for handling deep links
+    /// - GitHub profiles configuration
     func setupDI() {
         Resolver.register { TxThemeManager() }.scope(ResolverScope.application)
         Resolver.register { L10n() }.scope(ResolverScope.application)
@@ -37,6 +51,12 @@ extension TxGitAdminApp {
         TxGithubProfiles.Configuration().register()
     }
 
+    /// Configures network-related settings and error handling.
+    ///
+    /// This method:
+    /// - Sets up loading indicator for network requests
+    /// - Configures common network error handling
+    /// - Sets up network connection error handling
     func setupNetwork() {
         let l10n = Resolver.resolve(L10n.self)
         let apiClient: TxApiClient = Resolver.resolve(TxApiClient.self)
@@ -82,6 +102,13 @@ extension TxGitAdminApp {
 }
 
 extension TxGitAdminApp {
+    /// Displays an alert with retry and close options.
+    ///
+    /// - Parameters:
+    ///   - title: The title of the alert
+    ///   - message: The message to display
+    ///   - retryAction: Closure to execute when retry is tapped
+    ///   - closeAction: Closure to execute when close is tapped
     func showAlert(
         title: String,
         message: String,
@@ -109,11 +136,13 @@ extension TxGitAdminApp {
         
         let deeplinkService = Resolver.resolve(TxDeepLinksServiceProtocol.self)
         deeplinkService.rootViewController?.present(alert, animated: false, completion: nil)
-
     }
 }
 
 extension TxResponseError.NetworkErrorType {
+    /// Returns a localized error message for the network error type.
+    ///
+    /// - Returns: A localized string describing the error
     public func getErrorDetails() -> String {
         let l10n = Resolver.resolve(L10n.self)
         switch self {
@@ -137,6 +166,14 @@ extension TxResponseError.NetworkErrorType {
 }
 
 extension TxResponseError {
+    /// Returns a localized error message for the response error.
+    ///
+    /// This method:
+    /// - Handles network errors by delegating to NetworkErrorType
+    /// - Returns a custom message if provided
+    /// - Falls back to a generic error message if no custom message exists
+    ///
+    /// - Returns: A localized string describing the error
     public func getErrorDetails() -> String {
         let l10n = Resolver.resolve(L10n.self)
         switch self.errorType {

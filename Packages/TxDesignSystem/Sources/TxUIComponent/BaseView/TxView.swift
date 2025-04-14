@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+/// A base protocol for all views in the application.
+///
+/// This protocol provides:
+/// - View identification
+/// - Common view functionality
+/// - View lifecycle tracking
 public protocol TxView: View {
-    var identifier: String { get set }
+    /// The unique identifier for the view
+    var identifier: String { get }
 }

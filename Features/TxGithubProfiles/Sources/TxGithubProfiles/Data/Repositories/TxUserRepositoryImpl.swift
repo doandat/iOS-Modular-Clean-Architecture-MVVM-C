@@ -2,32 +2,50 @@ import Foundation
 import Combine
 import TxGithubUserManagerInterface
 
+/// Implementation of the user repository interface for GitHub profiles.
+///
+/// This class handles the data operations for GitHub users, including:
+/// - Fetching lists of users
+/// - Retrieving detailed user information
+/// - Converting API responses to domain models
 public class TxUserRepositoryImpl: TxUserRepository {
     private let remoteDataSource: TxGithubUserManagerInterface
 
+    /// Creates a new repository instance with the specified data source.
+    ///
+    /// - Parameter remoteDataSource: The data source for fetching GitHub user data.
     public init(remoteDataSource: TxGithubUserManagerInterface) {
         self.remoteDataSource = remoteDataSource
     }
 
+    /// Fetches a list of GitHub users with pagination support.
+    ///
+    /// - Parameters:
+    ///   - since: The ID of the last user from the previous page.
+    ///   - pageSize: The number of users to fetch per page.
+    /// - Returns: An array of `TxGithubUser` domain models.
+    /// - Throws: An error if the fetch operation fails.
     public func getUsers(since: Int, pageSize: Int) async throws -> [TxGithubUser] {
-//        return []
-//        return mockUsers
         let response = try await remoteDataSource.getUsers(since: since, pageSize: pageSize)
         return response.map { $0.toDomainUser() }
     }
 
+    /// Fetches detailed information for a specific GitHub user.
+    ///
+    /// - Parameter loginUsername: The GitHub username of the user to fetch.
+    /// - Returns: A `TxGithubUser` domain model with the user's details.
+    /// - Throws: An error if the fetch operation fails.
     public func getUserDetail(loginUsername: String) async throws -> TxGithubUser {
         let response = try await remoteDataSource.getUserDetail(loginUsername: loginUsername)
         return response.toDomainUser()
-//
-//        guard let user = mockUsers.first(where: { $0.id == loginUsername }) else {
-//            throw NSError(domain: "TxUserRepository", code: 404, userInfo: nil)
-//        }
-//        return user
     }
 }
 
 extension TxUserRepositoryImpl {
+    /// Mock data for testing and development purposes.
+    ///
+    /// This property provides a set of sample GitHub users that can be used
+    /// for testing the UI and functionality without making actual API calls.
     private var mockUsers: [TxGithubUser] {
         return [
             TxGithubUser(

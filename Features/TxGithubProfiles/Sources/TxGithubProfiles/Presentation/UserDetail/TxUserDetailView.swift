@@ -7,12 +7,27 @@ import TxFoundation
 import TxLogger
 import TxLocalization
 
+/// A view that displays detailed information about a GitHub user.
+///
+/// This view:
+/// - Shows user's basic information
+/// - Displays follower and following counts
+/// - Shows user's blog URL
+/// - Handles navigation and back button
 struct TxUserDetailView: TxView {
+    /// The unique identifier for this view.
     var identifier: String = String(describing: Self.self)
+
+    /// The view model that manages the state and logic of the user detail.
     @ObservedObject var viewModel: TxUserDetailViewModel
+
+    /// The localization environment object.
     @EnvironmentObject private var l10n: L10n
+
+    /// The theme manager environment object.
     @EnvironmentObject private var themeManager: TxThemeManager
 
+    /// The main content of the view.
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             TxDesignSystem.UIComponent.TxNavigationView(
@@ -37,13 +52,16 @@ struct TxUserDetailView: TxView {
         }
         .navigationBarHidden(true)
         .ignoresSafeArea(edges: .bottom)
-        .background(themeManager.selectedColor.backgroundWhite)
+        .background(themeManager.selectedColor.backgroundPrimary)
         .onAppear {
             guard !viewModel.dataLoaded else { return }
             viewModel.fetchUserDetail()
         }
     }
 
+    /// Creates a view showing follower and following counts.
+    ///
+    /// - Parameter user: The user model containing follower and following data.
     func followView(user: TxUserDetailUIModel) -> some View {
         HStack(alignment: .center) {
             TxFollowItemView(
@@ -61,6 +79,9 @@ struct TxUserDetailView: TxView {
         .padding()
     }
 
+    /// Creates a view showing the user's blog URL.
+    ///
+    /// - Parameter user: The user model containing blog URL data.
     func blogView(user: TxUserDetailUIModel) -> some View {
         VStack(alignment: .leading) {
             Text("githubprofile.user.detail.blog".localization())

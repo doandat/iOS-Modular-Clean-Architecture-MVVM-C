@@ -8,7 +8,21 @@
 import SwiftUI
 // swiftlint:disable identifier_name
 
+/// Extension providing color initialization from hex strings.
+///
+/// This extension provides:
+/// - Hex string to Color conversion
+/// - Support for different hex formats
+/// - Alpha channel support
 extension Color {
+    /// Creates a color from a hex string.
+    ///
+    /// Supports formats:
+    /// - 3 digits (RGB)
+    /// - 6 digits (RGB)
+    /// - 8 digits (ARGB)
+    ///
+    /// - Parameter hex: The hex string to convert
     public init(hex: String) {
         let hex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int: UInt64 = 0
@@ -34,7 +48,15 @@ extension Color {
     }
 }
 
+/// Extension providing color initialization from RGB values.
 extension Color {
+    /// Creates a color from RGB values.
+    ///
+    /// - Parameters:
+    ///   - r: Red component (0-255)
+    ///   - g: Green component (0-255)
+    ///   - b: Blue component (0-255)
+    ///   - a: Alpha component (0-1)
     public init(r: Double, g: Double, b: Double, a: Double) {
         self.init(
             red: r / 255.0,

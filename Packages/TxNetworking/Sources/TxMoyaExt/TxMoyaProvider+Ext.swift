@@ -11,8 +11,26 @@ import TxNetworkModels
 import TxLogger
 import SwiftyJSON
 
+/// Extension providing additional functionality for MoyaProvider.
+///
+/// This extension adds methods for:
+/// - Performing network requests with error handling
+/// - Decoding responses into model objects
+/// - Logging JSON responses in debug mode
 public extension MoyaProvider {
 
+    /// Performs a network request and returns the raw response data.
+    ///
+    /// This method:
+    /// - Handles success and error cases
+    /// - Logs JSON responses in debug mode
+    /// - Converts HTTP status codes to appropriate errors
+    /// - Handles various network error scenarios
+    ///
+    /// - Parameters:
+    ///   - target: The target endpoint to request
+    /// - Returns: The response data if successful
+    /// - Throws: A TxResponseError if the request fails
     @discardableResult
     @MainActor
     func performRequest(target: Target) async throws -> Data {
@@ -101,6 +119,13 @@ public extension MoyaProvider {
         }
     }
 
+    /// Performs a network request and decodes the response into a specified type.
+    ///
+    /// - Parameters:
+    ///   - target: The target endpoint to request
+    ///   - decoder: The JSON decoder to use (defaults to a new instance)
+    /// - Returns: The decoded response object
+    /// - Throws: A TxResponseError if the request fails or decoding fails
     @discardableResult
     @MainActor
     func performRequest<T: Decodable>(target: Target, decoder: JSONDecoder = .init()) async throws -> T {
@@ -109,7 +134,15 @@ public extension MoyaProvider {
         return result
     }
 
-
+    /// Creates a TxResponseError from a Moya response.
+    ///
+    /// This method:
+    /// - Attempts to parse the response JSON
+    /// - Extracts error information (key, message)
+    /// - Creates an appropriate error type
+    ///
+    /// - Parameter response: The Moya response to process
+    /// - Returns: A TxResponseError containing the error information
     static func makeResponseError(response: Response) -> TxResponseError {
         do {
             let jsonData = try response.mapJSON(failsOnEmptyData: false)
@@ -153,7 +186,11 @@ public extension MoyaProvider {
     }
 }
 
+/// Extension providing JSON pretty printing functionality for Data.
 extension Data {
+    /// Returns a pretty-printed JSON string representation of the data.
+    ///
+    /// - Returns: A formatted JSON string, or nil if the data cannot be converted
     var prettyPrintedJSONString: String? {
         guard let object = try? JSONSerialization.jsonObject(with: self, options: []),
               let data = try? JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted]),
@@ -163,7 +200,14 @@ extension Data {
     }
 }
 
+/// Extension providing JSON response logging functionality for Moya responses.
 extension Response {
+    /// Logs the JSON response in a formatted way.
+    ///
+    /// This method:
+    /// - Attempts to parse the response data as JSON
+    /// - Pretty prints the JSON for readability
+    /// - Logs the result using TxLogger
     func logJSONResponse() {
         do {
             let jsonObject = try JSONSerialization.jsonObject(with: self.data, options: .mutableContainers)

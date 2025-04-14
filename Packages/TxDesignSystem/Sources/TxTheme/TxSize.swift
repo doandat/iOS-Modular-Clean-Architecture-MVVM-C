@@ -6,7 +6,19 @@
 //
 import TxDesignSystem
 
+/// Extension providing size system definitions.
+///
+/// This extension provides:
+/// - Standard size values
+/// - Spacing constants
+/// - Layout dimensions
 extension TxDesignSystem.Size {
+    /// Global size values for the application.
+    ///
+    /// This enum defines:
+    /// - Standard spacing values
+    /// - Component dimensions
+    /// - Layout constraints
     public enum Global: Double {
         case size0 = 0
         case size10 = 0.5
@@ -31,4 +43,5 @@ extension TxDesignSystem.Size {
     }
 }
 
+/// Type alias for global size values.
 public typealias TxSize = TxDesignSystem.Size.Global

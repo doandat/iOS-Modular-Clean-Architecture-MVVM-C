@@ -8,11 +8,23 @@
 import SwiftUI
 import TxDesignSystem
 // swiftlint:disable function_body_length
+
+/// Extension providing theme color definitions.
 extension TxDesignSystem {
+    /// Theme color system for the application.
+    ///
+    /// This struct provides:
+    /// - Background colors
+    /// - Surface colors
+    /// - Text colors
+    /// - Icon colors
+    /// - Border colors
     public struct ThemeColor {
-        public let backgroundGray: SwiftUI.Color
-        public let backgroundWhite: SwiftUI.Color
-        // Surface
+        // Background colors
+        public let backgroundPrimary: SwiftUI.Color
+        public let backgroundSecondary: SwiftUI.Color
+        
+        // Surface colors
         public let surfaceBrand: SwiftUI.Color
         public let surfaceWhite: SwiftUI.Color
         public let surfaceGray: SwiftUI.Color
@@ -31,8 +43,8 @@ extension TxDesignSystem {
         public let surfacePending: SwiftUI.Color
         public let surfaceSelected: SwiftUI.Color
         public let surfaceHover: SwiftUI.Color
-
-        // Text
+        
+        // Text colors
         public let textPrimary: SwiftUI.Color
         public let textSecondary: SwiftUI.Color
         public let textTertiary: SwiftUI.Color
@@ -50,8 +62,8 @@ extension TxDesignSystem {
         public let textError: SwiftUI.Color
         public let textPending: SwiftUI.Color
         public let textWarning: SwiftUI.Color
-
-        // Icon
+        
+        // Icon colors
         public let iconDefault: SwiftUI.Color
         public let iconDisable: SwiftUI.Color
         public let iconInverse: SwiftUI.Color
@@ -61,8 +73,8 @@ extension TxDesignSystem {
         public let iconError: SwiftUI.Color
         public let iconSuccess: SwiftUI.Color
         public let iconWarning: SwiftUI.Color
-
-        // boder
+        
+        // Border colors
         public let boderWarning: SwiftUI.Color
         public let boderInformation: SwiftUI.Color
         public let boderError: SwiftUI.Color
@@ -74,10 +86,13 @@ extension TxDesignSystem {
         public let boderDefault: SwiftUI.Color
         public let boderDisable: SwiftUI.Color
         public let boderInverse: SwiftUI.Color
-
+        
+        /// Creates a theme color from a DTO.
+        ///
+        /// - Parameter themeColorDTO: The DTO containing color definitions
         public init(themeColorDTO: TxThemeColorDTO) {
-            self.backgroundGray = SwiftUI.Color(hex: themeColorDTO.backgroundGray)
-            self.backgroundWhite = SwiftUI.Color(hex: themeColorDTO.backgroundWhite)
+            self.backgroundPrimary = SwiftUI.Color(hex: themeColorDTO.backgroundPrimary)
+            self.backgroundSecondary = SwiftUI.Color(hex: themeColorDTO.backgroundSecondary)
             self.surfaceBrand = SwiftUI.Color(hex: themeColorDTO.surfaceBrand)
             self.surfaceWhite = SwiftUI.Color(hex: themeColorDTO.surfaceWhite)
             self.surfaceGray = SwiftUI.Color(hex: themeColorDTO.surfaceGray)

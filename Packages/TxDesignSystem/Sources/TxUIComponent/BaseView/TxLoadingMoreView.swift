@@ -2,10 +2,17 @@
 //  TxLoadingMoreView.swift
 //  TxDesignSystem
 //
-//  Created by doandat on 13/4/25.
+//  Created by doandat on 10/4/25.
 //
+
 import SwiftUI
 
+/// A view that displays a loading indicator for pagination.
+///
+/// This view provides:
+/// - Loading indicator for infinite scroll
+/// - Customizable appearance
+/// - Progress view integration
 public struct TxLoadingMoreView: View {
     @State private var animate = false
     let message: String
@@ -14,6 +21,12 @@ public struct TxLoadingMoreView: View {
         self.message = message
     }
 
+    /// The body of the loading view.
+    ///
+    /// This view:
+    /// - Displays a progress indicator
+    /// - Centers the indicator horizontally
+    /// - Applies padding
     public var body: some View {
         HStack {
             if animate {
