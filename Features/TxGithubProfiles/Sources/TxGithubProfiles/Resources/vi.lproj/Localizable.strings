@@ -5,4 +5,7 @@
 "githubprofile.user.detail.blog" = "Bài viết";
 "githubprofile.user.list.empty" = "Không có dữ liệu";
 "githubprofile.user.list.loading.more" = "Đang tải dữ liệu ...";
-
+"githubprofile.alert.common.error.message" = "Có lỗi xảy ra. Vui lòng thử lại";
+"githubprofile.alert.common.retry" = "Thử lại";
+"githubprofile.alert.common.close" = "Đóng";
+"githubprofile.alert.common.title" = "Thông báo";

@@ -8,25 +8,24 @@ import TxLogger
 final class TxUserListViewModel: ObservableObject {
     @Published private(set) var userListState: UserListState = .loading
     var users: [TxUserItemUIModel] = []
-    @Published var errorMessage: String?
     private var lastestUserId = 0
     var isLoading = false
     @Published var hasMoreData = false
-
+    
     var hasData: Bool {
         return !users.isEmpty
     }
-
+    
     @LazyInjected
     private var navigation: TxGithubProfileNavigation
-
+    
     @Injected
     private var getUsersUseCase: TxGetUsersUseCase
-
+    
     private var cancellables = Set<AnyCancellable>()
-
+    
     init() {}
-
+    
     @MainActor
     func loadInitialUsers() {
         guard !isLoading else { return }
@@ -47,26 +46,34 @@ final class TxUserListViewModel: ObservableObject {
                         self.lastestUserId = lastestUserId
                     }
                     self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
-
+                    
                 }, loading: { [weak self] loading in
                     self?.isLoading = loading
-                }, onAlertNetworkAction: { [weak self] _, _ in
+                }, onAlertNetworkAction: { [weak self] action, _ in
+                    guard action == .retry else { return }
                     self?.loadInitialUsers()
                 })
             } catch {
                 TxLogger().error(error)
-                self.errorMessage = error.localizedDescription
                 self.isLoading = false
                 self.hasMoreData = false
+                self.navigation.showAlert(
+                    title: "githubprofile.alert.common.title".localization(),
+                    message: "githubprofile.alert.common.error.message".localization(),
+                    retryAction: { [weak self] in
+                        self?.loadInitialUsers()
+                    },
+                    closeAction: {}
+                )
             }
         }
     }
-
+    
     @MainActor
     func loadMoreData() {
         guard !isLoading, hasMoreData else { return }
         isLoading = true
-
+        
         Task { @MainActor in
             do {
                 let apiClient = Resolver.resolve(TxApiClient.self)
@@ -84,18 +91,26 @@ final class TxUserListViewModel: ObservableObject {
                     self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
                 }, loading: { [weak self] loading in
                     self?.isLoading = loading
-                }, onAlertNetworkAction: { [weak self] _, _ in
+                }, onAlertNetworkAction: { [weak self] action, _ in
+                    guard action == .retry else { return }
                     self?.loadMoreData()
                 })
             } catch {
                 TxLogger().error(error)
-                self.errorMessage = error.localizedDescription
                 self.isLoading = false
                 self.hasMoreData = false
+                self.navigation.showAlert(
+                    title: "githubprofile.alert.common.title".localization(),
+                    message: "githubprofile.alert.common.error.message".localization(),
+                    retryAction: { [weak self] in
+                        self?.loadInitialUsers()
+                    },
+                    closeAction: {}
+                )
             }
         }
     }
-
+    
     @MainActor
     func gotoDetail(loginUsername: String) {
         navigation.routeToUserDetail(loginUsername: loginUsername)
@@ -106,7 +121,7 @@ extension TxUserListViewModel {
     enum UserListState: Equatable {
         case loading
         case data([TxUserItemUIModel])
-
+        
         static func == (lhs: UserListState, rhs: UserListState) -> Bool {
             switch (lhs, rhs) {
             case (.loading, .loading):

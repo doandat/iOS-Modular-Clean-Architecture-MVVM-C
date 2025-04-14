@@ -13,4 +13,10 @@ public protocol TxGithubProfileNavigation: AnyObject {
     @MainActor func routeToUserlist()
     @MainActor func routeToUserDetail(loginUsername: String)
     @MainActor func goBack()
+    @MainActor func showAlert(
+        title: String,
+        message: String,
+        retryAction: @escaping () -> Void,
+        closeAction: @escaping () -> Void
+    )
 }

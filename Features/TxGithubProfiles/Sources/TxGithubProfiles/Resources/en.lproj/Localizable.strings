@@ -5,3 +5,7 @@
 "githubprofile.user.detail.blog" = "Blog";
 "githubprofile.user.list.empty" = "Data empty";
 "githubprofile.user.list.loading.more" = "Loading more...";
+"githubprofile.alert.common.error.message" = "An error occurred. Please try again";
+"githubprofile.alert.common.retry" = "Retry";
+"githubprofile.alert.common.close" = "Close";
+"githubprofile.alert.common.title" = "Notification";

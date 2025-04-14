@@ -2,3 +2,5 @@
 "main.alert.common.network.no.connection" = "Không có kết nối mạng";
 "main.alert.common.network.time.out" = "Thời gian đợi yêu cầu quá hạn";
 "main.alert.common.error.message" = "Có lỗi xảy ra. Vui lòng thử lại";
+"main.alert.common.retry" = "Thử lại";
+"main.alert.common.close" = "Đóng";

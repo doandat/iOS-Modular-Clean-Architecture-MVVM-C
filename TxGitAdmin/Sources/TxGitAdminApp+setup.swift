@@ -58,7 +58,9 @@ extension TxGitAdminApp {
                     in: .main
                 ),
                 message: networkError.getErrorDetails(),
-                action: {
+                retryAction: {
+                    onAlertNetworkAction(.retry)
+                }, closeAction: {
                     onAlertNetworkAction(.cancel)
                 })
         }
@@ -68,7 +70,9 @@ extension TxGitAdminApp {
             self.showAlert(title: l10n.localized(
                 key: "main.alert.common.title",
                 in: .main
-            ), message: networkError.getErrorDetails(), action: {
+            ), message: networkError.getErrorDetails(), retryAction: {
+                onAlertNetworkAction(.retry)
+            }, closeAction: {
                 onAlertNetworkAction(.cancel)
             })
         }
@@ -76,14 +80,31 @@ extension TxGitAdminApp {
 }
 
 extension TxGitAdminApp {
-    func showAlert(title: String, message: String, action: @escaping () -> Void) {
+    func showAlert(
+        title: String,
+        message: String,
+        retryAction: @escaping () -> Void,
+        closeAction: @escaping () -> Void
+    ) {
+        let l10n = Resolver.resolve(L10n.self)
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)
 
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
-            action()
+        alert.addAction(UIAlertAction(title: l10n.localized(
+            key: "main.alert.common.retry",
+            in: .main
+        ), style: .default, handler: { _ in
+            retryAction()
         }))
+        
+        alert.addAction(UIAlertAction(title: l10n.localized(
+            key: "main.alert.common.close",
+            in: .main
+        ), style: .cancel, handler: { _ in
+            closeAction()
+        }))
+        
         let deeplinkService = Resolver.resolve(TxDeepLinksServiceProtocol.self)
         deeplinkService.rootViewController?.present(alert, animated: false, completion: nil)
 

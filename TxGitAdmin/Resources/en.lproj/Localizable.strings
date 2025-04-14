@@ -2,3 +2,5 @@
 "main.alert.common.network.no.connection" = "No network connection";
 "main.alert.common.network.time.out" = "Request timeout";
 "main.alert.common.error.message" = "An error occurred. Please try again";
+"main.alert.common.retry" = "Retry";
+"main.alert.common.close" = "Close";

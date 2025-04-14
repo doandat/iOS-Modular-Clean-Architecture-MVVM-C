@@ -8,7 +8,6 @@ import TxApiClient
 final class TxUserDetailViewModel: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var user: TxUserDetailUIModel?
-    @Published var errorMessage: String?
     var dataLoaded: Bool = false
 
     private let loginUsername: String
@@ -37,10 +36,21 @@ final class TxUserDetailViewModel: ObservableObject {
                     self.user = user.toMapDetailUI()
                     self.isLoading = false
                     self.dataLoaded = true
+                }, onAlertNetworkAction: { [weak self] action, _ in
+                    self?.isLoading = false
+                    guard action == .retry else { return }
+                    self?.fetchUserDetail()
                 })
             } catch {
                 TxLogger().error(error)
-                self.errorMessage = error.localizedDescription
+                self.navigation.showAlert(
+                    title: "githubprofile.alert.common.title".localization(),
+                    message: "githubprofile.alert.common.error.message".localization(),
+                    retryAction: { [weak self] in
+                        self?.fetchUserDetail()
+                    },
+                    closeAction: {}
+                )
                 self.isLoading = false
             }
         }
