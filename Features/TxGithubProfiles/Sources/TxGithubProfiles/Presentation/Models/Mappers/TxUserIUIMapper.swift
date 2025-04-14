@@ -11,7 +11,8 @@ extension TxGithubUser {
     func toMapListUI() -> TxUserItemUIModel {
         return TxUserItemUIModel(
             id: id,
-            name: name,
+            name: username,
+            loginUsername: username,
             avatarUrl: avatarUrl,
             landingPageUrl: landingPageUrl,
             location: location
@@ -22,7 +23,7 @@ extension TxGithubUser {
         let maxFollower = TxGithubConstants.maxFollowerNumber
         let maxFollowing = TxGithubConstants.maxFollowingNumber
         let followersStr = followers > maxFollower ? "\(maxFollower)+" : "\(followers)"
-        let followingStr = followers > maxFollowing ? "\(maxFollowing)+" : "\(following)"
+        let followingStr = following > maxFollowing ? "\(maxFollowing)+" : "\(following)"
         return TxUserDetailUIModel(
             baseInfo: toMapListUI(),
             followers: followersStr,

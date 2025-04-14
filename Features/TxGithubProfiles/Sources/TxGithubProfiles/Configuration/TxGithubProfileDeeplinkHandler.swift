@@ -34,10 +34,10 @@ public final class TxGithubProfileDeeplinkHandler: TxDeeplinkHandlerProtocol {
             coordinator.routeToUserlist()
         case .detail:
             let params = url.parseQueryParameters()
-            guard let userId = params["userId"] else {
+            guard let loginUsername = params["loginUsername"] else {
                 return
             }
-            coordinator.routeToUserDetail(userId: userId)
+            coordinator.routeToUserDetail(loginUsername: loginUsername)
         }
     }
 }

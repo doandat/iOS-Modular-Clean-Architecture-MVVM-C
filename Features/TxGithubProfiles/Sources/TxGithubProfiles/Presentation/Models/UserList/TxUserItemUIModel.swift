@@ -7,8 +7,9 @@
 import Foundation
 
 struct TxUserItemUIModel: Identifiable, Equatable, Sendable {
-    let id: String
+    let id: Int
     let name: String
+    let loginUsername: String
     let avatarUrl: String
     let landingPageUrl: String
     let location: String

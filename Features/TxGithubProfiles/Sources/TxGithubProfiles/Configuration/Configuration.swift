@@ -5,8 +5,9 @@
 //  Created by doandat on 11/4/25.
 //
 import Foundation
-import TxFoundation
 import Resolver
+import TxFoundation
+import TxGithubUserManagerService
 
 public struct TxGithubProfiles {}
 
@@ -16,28 +17,13 @@ extension TxGithubProfiles {
 
         @MainActor
         public func register() {
-//            let settingsManagerService: SettingsManagerService = {
-//                guard let config = Resolver.optional(MSBBackbaseConfiguration.self),
-//                      let authPlugin = Resolver.optional(AccessTokenPlugin.self)
-//                else {
-//                    fatalError("Backbase Config not found")
-//                }
-//
-//                let moyaProvider: MoyaProvider<SettingsManagerService.Target> = {
-//                    .init(
-//                        session: .init(configuration: config.securitySessionConfiguration),
-//                        plugins: [authPlugin]
-//                    )
-//                }()
-//
-//                return SettingsManagerService(
-//                    baseURL: config.baseURL,
-//                    moyaProvider: moyaProvider
-//                )
-//            }()
+            let settingsManagerService: TxGithubUserManagerService = {
+                return TxGithubUserManagerService(
+                    baseURL: TxEnvironmentValues.apiHost
+                )
+            }()
 
-//            let repository = TxUserRepositoryImpl(remoteDataSource: settingsManagerService)
-            let repository = TxUserRepositoryImpl()
+            let repository = TxUserRepositoryImpl(remoteDataSource: settingsManagerService)
             Resolver.register { repository as TxUserRepository }
 
             let getUsersUseCase = TxGetUsersUseCaseImpl()

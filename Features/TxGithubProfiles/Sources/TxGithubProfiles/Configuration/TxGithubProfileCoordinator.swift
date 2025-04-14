@@ -35,8 +35,8 @@ extension TxGithubProfileCoordinator: TxGithubProfileNavigation {
         self.navigationController.setViewControllers([controller], animated: false)
     }
 
-    public func routeToUserDetail(userId: String) {
-        let viewModel = TxUserDetailViewModel(userId: userId)
+    public func routeToUserDetail(loginUsername: String) {
+        let viewModel = TxUserDetailViewModel(loginUsername: loginUsername)
         let contentView = TxUserDetailView(viewModel: viewModel)
         let controller = TxHostingController(rootView: contentView)
         self.navigationController.pushViewController(controller, animated: true)

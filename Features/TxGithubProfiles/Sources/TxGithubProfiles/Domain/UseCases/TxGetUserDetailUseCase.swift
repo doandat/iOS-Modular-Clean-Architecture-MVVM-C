@@ -3,7 +3,8 @@ import Combine
 import Resolver
 
 public protocol TxGetUserDetailUseCase {
-    func getUserDetail(userId: String) async throws -> TxGithubUser
+    @MainActor
+    func getUserDetail(loginUsername: String) async throws -> TxGithubUser
 }
 
 public class TxGetUserDetailUseCaseImpl: TxGetUserDetailUseCase {
@@ -11,7 +12,7 @@ public class TxGetUserDetailUseCaseImpl: TxGetUserDetailUseCase {
 
     public init() {}
 
-    public func getUserDetail(userId: String) async throws -> TxGithubUser {
-        return try await repository.getUserDetail(userId: userId)
+    @MainActor public func getUserDetail(loginUsername: String) async throws -> TxGithubUser {
+        return try await repository.getUserDetail(loginUsername: loginUsername)
     }
 }

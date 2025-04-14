@@ -31,7 +31,6 @@ struct TxUserDetailView: TxView {
         .navigationBarHidden(true)
         .ignoresSafeArea(edges: .bottom)
         .background(themeManager.selectedColor.backgroundWhite)
-        .activityIndicator(isShowing: $viewModel.isLoading)
         .onAppear {
             guard !viewModel.dataLoaded else { return }
             viewModel.fetchUserDetail()

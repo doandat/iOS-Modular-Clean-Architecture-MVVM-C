@@ -22,8 +22,11 @@ struct TxUserItemView: View {
         HStack(spacing: TxSize.size300.rawValue) {
             avatarView
             infoView
+            Spacer()
         }
+        .frame(maxWidth: .infinity)
         .modifier(TxBoxBorderModifier())
+//        .background(.gray)
         .padding(.horizontal, TxSize.size600.rawValue)
     }
 
@@ -65,22 +68,27 @@ struct TxUserItemView: View {
             Text(user.name)
                 .modifier(TxFont.style(TxFont.Typography.titleSemibold()))
                 .foregroundColor(themeManager.selectedColor.textPrimary)
-            Divider()
             switch type {
             case .list:
-                Text(user.landingPageUrl)
-                    .underline()
-                    .modifier(TxFont.style(TxFont.Typography.smallRegular()))
-                    .foregroundColor(.blue)
-            case .detail:
-                HStack(spacing: TxSize.size100.rawValue) {
-                    Image(.iconLocation)
-                        .resizable()
-                        .frame(width: TxSize.size400.rawValue, height: TxSize.size400.rawValue)
-                        .foregroundColor(themeManager.selectedColor.textSecondary)
-                    Text(user.location)
+                if !user.landingPageUrl.isEmpty {
+                    Divider()
+                    Text(user.landingPageUrl)
+                        .underline()
                         .modifier(TxFont.style(TxFont.Typography.smallRegular()))
-                        .foregroundColor(themeManager.selectedColor.textSecondary)
+                        .foregroundColor(.blue)
+                }
+            case .detail:
+                if !user.location.isEmpty {
+                    Divider()
+                    HStack(spacing: TxSize.size100.rawValue) {
+                        Image(.iconLocation)
+                            .resizable()
+                            .frame(width: TxSize.size400.rawValue, height: TxSize.size400.rawValue)
+                            .foregroundColor(themeManager.selectedColor.textSecondary)
+                        Text(user.location)
+                            .modifier(TxFont.style(TxFont.Typography.smallRegular()))
+                            .foregroundColor(themeManager.selectedColor.textSecondary)
+                    }
                 }
             }
             Spacer()
@@ -100,7 +108,7 @@ struct UserItemView_Previews: PreviewProvider {
     static var previews: some View {
         TxUserItemView(
             user: TxGithubUser(
-                id: "1",
+                id: 1,
                 name: "David",
                 username: "David Patel",
                 avatarUrl: "user_avatar",

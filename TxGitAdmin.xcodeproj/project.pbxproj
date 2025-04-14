@@ -16,7 +16,11 @@
 		B013F6D82DA7914C00952D49 /* TxGithubProfiles in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D72DA7914C00952D49 /* TxGithubProfiles */; };
 		B013F6DA2DA7914C00952D49 /* TxLocalization in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6D92DA7914C00952D49 /* TxLocalization */; };
 		B013F6DC2DA7914C00952D49 /* TxLogger in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6DB2DA7914C00952D49 /* TxLogger */; };
-		B013F6DE2DA7914C00952D49 /* TxNetworking in Frameworks */ = {isa = PBXBuildFile; productRef = B013F6DD2DA7914C00952D49 /* TxNetworking */; };
+		B05698B72DAA62C4009668C1 /* TxApiClient in Frameworks */ = {isa = PBXBuildFile; productRef = B05698B62DAA62C4009668C1 /* TxApiClient */; };
+		B05698B92DAA62C4009668C1 /* TxGithubUserManagerInterface in Frameworks */ = {isa = PBXBuildFile; productRef = B05698B82DAA62C4009668C1 /* TxGithubUserManagerInterface */; };
+		B05698BB2DAA62C4009668C1 /* TxGithubUserManagerService in Frameworks */ = {isa = PBXBuildFile; productRef = B05698BA2DAA62C4009668C1 /* TxGithubUserManagerService */; };
+		B05698BD2DAA62C4009668C1 /* TxNetworkModels in Frameworks */ = {isa = PBXBuildFile; productRef = B05698BC2DAA62C4009668C1 /* TxNetworkModels */; };
+		B05698F82DAA9F18009668C1 /* Atlantis in Frameworks */ = {isa = PBXBuildFile; productRef = B05698F72DAA9F18009668C1 /* Atlantis */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,9 +53,22 @@
 		B0C6CE832DA6ACDA0074D216 /* TxGitAdminUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TxGitAdminUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B05698F42DAA9B81009668C1 /* Exceptions for "TxGitAdmin" folder in "TxGitAdmin" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B0C6CE672DA6ACD80074D216 /* TxGitAdmin */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B0C6CE6A2DA6ACD80074D216 /* TxGitAdmin */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B05698F42DAA9B81009668C1 /* Exceptions for "TxGitAdmin" folder in "TxGitAdmin" target */,
+			);
 			path = TxGitAdmin;
 			sourceTree = "<group>";
 		};
@@ -74,14 +91,18 @@
 			files = (
 				B013F6CC2DA7914C00952D49 /* TxDeeplink in Frameworks */,
 				B013F6D02DA7914C00952D49 /* TxFont in Frameworks */,
+				B05698B92DAA62C4009668C1 /* TxGithubUserManagerInterface in Frameworks */,
 				B013F6D82DA7914C00952D49 /* TxGithubProfiles in Frameworks */,
+				B05698F82DAA9F18009668C1 /* Atlantis in Frameworks */,
+				B05698BB2DAA62C4009668C1 /* TxGithubUserManagerService in Frameworks */,
 				B013F6DA2DA7914C00952D49 /* TxLocalization in Frameworks */,
 				B013F6DC2DA7914C00952D49 /* TxLogger in Frameworks */,
 				B013F6D42DA7914C00952D49 /* TxUIComponent in Frameworks */,
-				B013F6DE2DA7914C00952D49 /* TxNetworking in Frameworks */,
+				B05698B72DAA62C4009668C1 /* TxApiClient in Frameworks */,
 				B013F6D22DA7914C00952D49 /* TxTheme in Frameworks */,
 				B013F6CE2DA7914C00952D49 /* TxDesignSystem in Frameworks */,
 				B013F6D62DA7914C00952D49 /* TxFoundation in Frameworks */,
+				B05698BD2DAA62C4009668C1 /* TxNetworkModels in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,7 +203,11 @@
 				B013F6D72DA7914C00952D49 /* TxGithubProfiles */,
 				B013F6D92DA7914C00952D49 /* TxLocalization */,
 				B013F6DB2DA7914C00952D49 /* TxLogger */,
-				B013F6DD2DA7914C00952D49 /* TxNetworking */,
+				B05698B62DAA62C4009668C1 /* TxApiClient */,
+				B05698B82DAA62C4009668C1 /* TxGithubUserManagerInterface */,
+				B05698BA2DAA62C4009668C1 /* TxGithubUserManagerService */,
+				B05698BC2DAA62C4009668C1 /* TxNetworkModels */,
+				B05698F72DAA9F18009668C1 /* Atlantis */,
 			);
 			productName = TxGitAdmin;
 			productReference = B0C6CE682DA6ACD80074D216 /* TxGitAdmin.app */;
@@ -263,10 +288,12 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = B0C6CE5F2DA6ACD80074D216;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				B05698F62DAA9F18009668C1 /* XCRemoteSwiftPackageReference "atlantis" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B0C6CE692DA6ACD80074D216 /* Products */;
@@ -418,7 +445,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				INFOPLIST_FILE = TxGitAdmin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git admin - Dev";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -567,7 +595,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				INFOPLIST_FILE = TxGitAdmin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git admin - Dev";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -716,7 +745,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				INFOPLIST_FILE = TxGitAdmin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git admin - Dev";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -920,7 +950,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				INFOPLIST_FILE = TxGitAdmin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git admin - Dev";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -961,7 +992,8 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "${TX_APP_NAME}";
+				INFOPLIST_FILE = TxGitAdmin/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Git admin - Dev";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -1132,6 +1164,17 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B05698F62DAA9F18009668C1 /* XCRemoteSwiftPackageReference "atlantis" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ProxymanApp/atlantis";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		B013F6CB2DA7914C00952D49 /* TxDeeplink */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1169,9 +1212,26 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = TxLogger;
 		};
-		B013F6DD2DA7914C00952D49 /* TxNetworking */ = {
+		B05698B62DAA62C4009668C1 /* TxApiClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = TxNetworking;
+			productName = TxApiClient;
+		};
+		B05698B82DAA62C4009668C1 /* TxGithubUserManagerInterface */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxGithubUserManagerInterface;
+		};
+		B05698BA2DAA62C4009668C1 /* TxGithubUserManagerService */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxGithubUserManagerService;
+		};
+		B05698BC2DAA62C4009668C1 /* TxNetworkModels */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TxNetworkModels;
+		};
+		B05698F72DAA9F18009668C1 /* Atlantis */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B05698F62DAA9F18009668C1 /* XCRemoteSwiftPackageReference "atlantis" */;
+			productName = Atlantis;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

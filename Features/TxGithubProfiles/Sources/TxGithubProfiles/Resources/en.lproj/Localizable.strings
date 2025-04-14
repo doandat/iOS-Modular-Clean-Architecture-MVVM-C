@@ -3,3 +3,5 @@
 "githubprofile.user.detail.follower" = "Follower";
 "githubprofile.user.detail.following" = "Following";
 "githubprofile.user.detail.blog" = "Blog";
+"githubprofile.user.list.empty" = "Data empty";
+"githubprofile.user.list.loading.more" = "Loading more...";

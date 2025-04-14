@@ -1,0 +1,4 @@
+"main.alert.common.title" = "Notification";
+"main.alert.common.network.no.connection" = "No network connection";
+"main.alert.common.network.time.out" = "Request timeout";
+"main.alert.common.error.message" = "An error occurred. Please try again";

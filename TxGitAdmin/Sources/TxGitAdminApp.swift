@@ -13,13 +13,17 @@ import TxFont
 import TxLocalization
 import TxDeeplink
 import TxGithubProfiles
+import TxApiClient
+import TxLogger
+import TxUIComponent
 
 @main
 struct TxGitAdminApp: App {
     init() {
         TxDesignSystem.Fonts.registerFonts()
         setupDI()
-        initRootView()
+        setupNetwork()
+        setupDebug()
     }
     
     var body: some Scene {
@@ -30,22 +34,5 @@ struct TxGitAdminApp: App {
                 .environmentObject(Resolver.resolve(L10n.self))
                 
         }
-    }
-}
-
-extension TxGitAdminApp {
-    private func setupDI() {
-        Resolver.register { TxThemeManager() }.scope(ResolverScope.application)
-        Resolver.register { L10n() }.scope(ResolverScope.application)
-        TxGithubProfiles.Configuration().register()
-    }
-    
-    private func initRootView() {
-        let deepLinkType = TxDeeplinkPath.GithubProfile.list
-        guard let deeplink = TxDeeplinkHelper.makeDeeplink(type: deepLinkType) else { return }
-        Task { @MainActor in
-            DeepLinksService.shared.handleURL(deeplink)
-        }
-
     }
 }

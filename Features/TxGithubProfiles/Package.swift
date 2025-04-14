@@ -21,7 +21,8 @@ let package = Package(
         .package(path: "../../Packages/TxLogger"),
         .package(path: "../../Packages/TxFoundation"),
         .package(path: "../../Packages/TxDeeplink"),
-        .package(path: "../../Packages/TxLocalization"),  
+        .package(path: "../../Packages/TxLocalization"),
+        .package(path: "../../Packages/TxNetworking")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -39,7 +40,11 @@ let package = Package(
                 .product(name: "TxDesignSystem", package: "TxDesignSystem"),
                 .product(name: "TxFont", package: "TxDesignSystem"),
                 .product(name: "TxTheme", package: "TxDesignSystem"),
-                .product(name: "TxUIComponent", package: "TxDesignSystem")
+                .product(name: "TxUIComponent", package: "TxDesignSystem"),
+                .product(name: "TxNetworkModels", package: "TxNetworking"),
+                .product(name: "TxApiClient", package: "TxNetworking"),
+                .product(name: "TxGithubUserManagerInterface", package: "TxNetworking"),
+                .product(name: "TxGithubUserManagerService", package: "TxNetworking")
             ],
             resources: [.process("Resources")],
             plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")]

@@ -1,0 +1,4 @@
+"main.alert.common.title" = "Thông báo";
+"main.alert.common.network.no.connection" = "Không có kết nối mạng";
+"main.alert.common.network.time.out" = "Thời gian đợi yêu cầu quá hạn";
+"main.alert.common.error.message" = "Có lỗi xảy ra. Vui lòng thử lại";

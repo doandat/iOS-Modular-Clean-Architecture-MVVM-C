@@ -3,7 +3,8 @@ import Combine
 import Resolver
 
 public protocol TxGetUsersUseCase {
-    func getUsers(page: Int, pageSize: Int) async throws -> [TxGithubUser]
+    @MainActor
+    func getUsers(since: Int, pageSize: Int) async throws -> [TxGithubUser]
 }
 
 public class TxGetUsersUseCaseImpl: TxGetUsersUseCase {
@@ -11,7 +12,7 @@ public class TxGetUsersUseCaseImpl: TxGetUsersUseCase {
 
     public init() {}
 
-    public func getUsers(page: Int, pageSize: Int) async throws -> [TxGithubUser] {
-        return try await repository.getUsers(page: page, pageSize: pageSize)
+    public func getUsers(since: Int, pageSize: Int) async throws -> [TxGithubUser] {
+        return try await repository.getUsers(since: since, pageSize: pageSize)
     }
 }

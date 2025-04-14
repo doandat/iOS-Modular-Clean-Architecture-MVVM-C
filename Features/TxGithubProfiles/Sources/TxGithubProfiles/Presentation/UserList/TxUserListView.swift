@@ -8,6 +8,10 @@ import TxLogger
 import TxLocalization
 
 struct TxUserListView: TxView {
+    init(viewModel: TxUserListViewModel) {
+        self.viewModel = viewModel
+        TxLogger().debug("TxUserListView init")
+    }
     var identifier: String = String(describing: Self.self)
     @ObservedObject var viewModel: TxUserListViewModel
     @EnvironmentObject private var l10n: L10n
@@ -23,7 +27,6 @@ struct TxUserListView: TxView {
         .navigationBarHidden(true)
         .ignoresSafeArea(edges: .bottom)
         .background(themeManager.selectedColor.backgroundWhite)
-        //        .activityIndicator(isShowing: $viewModel.isLoading)
         .onAppear {
             guard !viewModel.hasData else { return }
             viewModel.loadInitialUsers()
@@ -35,8 +38,6 @@ struct TxUserListView: TxView {
         switch viewModel.userListState {
         case .loading:
             loadingView
-        case .error:
-            errorView
         case .data(let users):
             userListView(users: users)
         }
@@ -51,70 +52,62 @@ struct TxUserListView: TxView {
             .padding(TxSize.size400.rawValue)
     }
 
-    var errorView: some View {
-        //        InterruptionDataView(message: nil) { viewModel.handleEvent(.refresh) }
-        //            .accessibilityIdentifier(SettingsElementID.Security.errorView)
-        EmptyView()
+    @ViewBuilder
+    func userListView(users: [TxUserItemUIModel]) -> some View {
+        if users.isEmpty {
+            Spacer()
+            Text("githubprofile.user.list.empty".localization())
+            Spacer()
+        } else {
+            List {
+                Section {
+                    ForEach(users) { user in
+                        TxUserItemView(user: user, type: .list)
+                            .listRowInsets(
+                                EdgeInsets(
+                                    top: TxSize.size200.rawValue,
+                                    leading: TxSize.size0.rawValue,
+                                    bottom: TxSize.size200.rawValue,
+                                    trailing: TxSize.size0.rawValue
+                                )
+                            )
+                            .listRowSeparator(.hidden)
+                            .border(Color.clear)
+                            .background(.clear)
+                            .onTapGesture {
+                                viewModel.gotoDetail(loginUsername: user.loginUsername)
+                            }
+                    }
+                    loadingMoreView
+                } footer: {
+                    Spacer().frame(height: TxSize.size400.rawValue)
+                }.listSectionSeparator(.hidden)
+            }
+            .background(.clear)
+            .listStyle(PlainListStyle())
+            .refreshable {
+                viewModel.loadInitialUsers()
+            }
+        }
     }
 
-    func userListView(users: [TxUserItemUIModel]) -> some View {
-        List {
-            Section {
-                ForEach(users) { user in
-                    TxUserItemView(user: user, type: .list)
-                        .listRowInsets(
-                            EdgeInsets(
-                                top: TxSize.size200.rawValue,
-                                leading: TxSize.size0.rawValue,
-                                bottom: TxSize.size200.rawValue,
-                                trailing: TxSize.size0.rawValue
-                            )
-                        )
-                        .listRowSeparator(.hidden)
-                        .border(Color.clear)
-                        .background(.clear)
-                        .onTapGesture {
-                            viewModel.gotoDetail(userId: user.id)
-                        }
+    @ViewBuilder
+    var loadingMoreView: some View {
+        if viewModel.hasMoreData {
+            TxLoadingMoreView(message: "githubprofile.user.list.loading.more".localization())
+                .listRowInsets(
+                    EdgeInsets(
+                        top: TxSize.size200.rawValue,
+                        leading: TxSize.size0.rawValue,
+                        bottom: TxSize.size200.rawValue,
+                        trailing: TxSize.size0.rawValue
+                    )
+                )
+                .listRowSeparator(.hidden)
+                .onAppear {
+                    viewModel.loadMoreData()
                 }
-                if viewModel.hasMoreData {
-                    ProgressView()
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .listRowInsets(.init())
-                        .listRowSeparator(.hidden)
-                        .onAppear {
-                            viewModel.loadMoreData()
-                        }
-                }
-            } footer: {
-                Spacer().frame(height: TxSize.size400.rawValue)
-            }.listSectionSeparator(.hidden)
         }
-        .background(.clear)
-        .listStyle(PlainListStyle())
-        .refreshable {
-            viewModel.loadInitialUsers() // Gọi làm mới dữ liệu
-        }
-        //        List(users) { user in
-        //            TxUserItemView(user: user)
-        //                .listRowInsets(
-        //                    EdgeInsets(
-        //                        top: TxSize.size400.rawValue,
-        //                        leading: TxSize.size0.rawValue,
-        //                        bottom: TxSize.size0.rawValue,
-        //                        trailing: TxSize.size0.rawValue
-        //                    )
-        //                )
-        //                .listRowSeparator(.hidden)
-        //                .border(Color.clear)
-        //                .background(.clear)
-        //                .onTapGesture {
-        //                    viewModel.gotoDetail(userId: user.id)
-        //                }
-        //        }
-        ////        .padding(.bottom, 40)
-        //        .background(.clear)
-        //        .listStyle(PlainListStyle())
     }
 
 }

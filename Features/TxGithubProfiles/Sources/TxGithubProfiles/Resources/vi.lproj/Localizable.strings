@@ -3,3 +3,6 @@
 "githubprofile.user.detail.follower" = "Người theo dõi";
 "githubprofile.user.detail.following" = "Đang theo dõi";
 "githubprofile.user.detail.blog" = "Bài viết";
+"githubprofile.user.list.empty" = "Không có dữ liệu";
+"githubprofile.user.list.loading.more" = "Đang tải dữ liệu ...";
+

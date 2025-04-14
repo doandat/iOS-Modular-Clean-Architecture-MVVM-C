@@ -2,6 +2,8 @@ import Foundation
 import Combine
 
 public protocol TxUserRepository {
-    func getUsers(page: Int, pageSize: Int) async throws -> [TxGithubUser]
-    func getUserDetail(userId: String) async throws -> TxGithubUser
+    @MainActor
+    func getUsers(since: Int, pageSize: Int) async throws -> [TxGithubUser]
+    @MainActor
+    func getUserDetail(loginUsername: String) async throws -> TxGithubUser
 }

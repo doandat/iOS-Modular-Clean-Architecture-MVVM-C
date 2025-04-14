@@ -11,6 +11,6 @@ import TxUIComponent
 
 public protocol TxGithubProfileNavigation: AnyObject {
     @MainActor func routeToUserlist()
-    @MainActor func routeToUserDetail(userId: String)
+    @MainActor func routeToUserDetail(loginUsername: String)
     @MainActor func goBack()
 }

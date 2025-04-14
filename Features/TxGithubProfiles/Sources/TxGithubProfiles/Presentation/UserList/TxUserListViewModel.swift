@@ -2,13 +2,15 @@ import Combine
 import Foundation
 import SwiftUI
 import Resolver
+import TxApiClient
+import TxLogger
 
 final class TxUserListViewModel: ObservableObject {
     @Published private(set) var userListState: UserListState = .loading
     var users: [TxUserItemUIModel] = []
     @Published var errorMessage: String?
-    private var currentPage = 1
-    @Published var isLoading = false
+    private var lastestUserId = 0
+    var isLoading = false
     @Published var hasMoreData = false
 
     var hasData: Bool {
@@ -29,19 +31,29 @@ final class TxUserListViewModel: ObservableObject {
     func loadInitialUsers() {
         guard !isLoading else { return }
         isLoading = true
-        currentPage = 1
+        lastestUserId = 0
         Task { @MainActor in
             do {
-                let newUsers = try await getUsersUseCase.getUsers(
-                    page: self.currentPage,
-                    pageSize: TxGithubConstants.pageSize
-                )
-                self.users = newUsers.map { $0.toMapListUI() }
-                self.userListState = .data(self.users)
-                self.isLoading = false
-                self.currentPage += 1
-                self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
+                try await TxApiClient.shared.performRequest(action: { @MainActor in
+                    let newUsers = try await getUsersUseCase.getUsers(
+                        since: self.lastestUserId,
+                        pageSize: TxGithubConstants.pageSize
+                    )
+                    self.users = newUsers.map { $0.toMapListUI() }
+                    self.userListState = .data(self.users)
+                    self.isLoading = false
+                    if let lastestUserId = newUsers.last?.id {
+                        self.lastestUserId = lastestUserId
+                    }
+                    self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
+
+                }, loading: { [weak self] loading in
+                    self?.isLoading = loading
+                }, onAlertNetworkAction: { [weak self] _, _ in
+                    self?.loadInitialUsers()
+                })
             } catch {
+                TxLogger().error(error)
                 self.errorMessage = error.localizedDescription
                 self.isLoading = false
                 self.hasMoreData = false
@@ -56,16 +68,25 @@ final class TxUserListViewModel: ObservableObject {
 
         Task { @MainActor in
             do {
-                let newUsers = try await getUsersUseCase.getUsers(
-                    page: self.currentPage,
-                    pageSize: TxGithubConstants.pageSize
-                )
-                self.users += newUsers.map { $0.toMapListUI() }
-                self.userListState = .data(self.users)
-                self.isLoading = false
-                self.currentPage += 1
-                self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
+                try await TxApiClient.shared.performRequest(action: { @MainActor in
+                    let newUsers = try await getUsersUseCase.getUsers(
+                        since: self.lastestUserId,
+                        pageSize: TxGithubConstants.pageSize
+                    )
+                    self.users += newUsers.map { $0.toMapListUI() }
+                    self.userListState = .data(self.users)
+                    self.isLoading = false
+                    if let lastestUserId = newUsers.last?.id {
+                        self.lastestUserId = lastestUserId
+                    }
+                    self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
+                }, loading: { [weak self] loading in
+                    self?.isLoading = loading
+                }, onAlertNetworkAction: { [weak self] _, _ in
+                    self?.loadMoreData()
+                })
             } catch {
+                TxLogger().error(error)
                 self.errorMessage = error.localizedDescription
                 self.isLoading = false
                 self.hasMoreData = false
@@ -74,22 +95,19 @@ final class TxUserListViewModel: ObservableObject {
     }
 
     @MainActor
-    func gotoDetail(userId: String) {
-        navigation.routeToUserDetail(userId: userId)
+    func gotoDetail(loginUsername: String) {
+        navigation.routeToUserDetail(loginUsername: loginUsername)
     }
 }
 
 extension TxUserListViewModel {
     enum UserListState: Equatable {
         case loading
-        case error(Error)
         case data([TxUserItemUIModel])
 
         static func == (lhs: UserListState, rhs: UserListState) -> Bool {
             switch (lhs, rhs) {
             case (.loading, .loading):
-                return true
-            case (.error, .error):
                 return true
             case let (.data(lhsUsers), .data(rhsUsers)):
                 return lhsUsers == rhsUsers

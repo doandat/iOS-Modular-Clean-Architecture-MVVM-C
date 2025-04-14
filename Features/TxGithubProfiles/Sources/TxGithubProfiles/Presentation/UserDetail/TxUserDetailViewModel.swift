@@ -2,6 +2,8 @@ import Combine
 import Foundation
 import SwiftUI
 import Resolver
+import TxLogger
+import TxApiClient
 
 final class TxUserDetailViewModel: ObservableObject {
     @Published var isLoading: Bool = false
@@ -9,7 +11,7 @@ final class TxUserDetailViewModel: ObservableObject {
     @Published var errorMessage: String?
     var dataLoaded: Bool = false
 
-    private let userId: String
+    private let loginUsername: String
 
     @LazyInjected
     private var navigation: TxGithubProfileNavigation
@@ -19,8 +21,8 @@ final class TxUserDetailViewModel: ObservableObject {
 
     private var cancellables = Set<AnyCancellable>()
 
-    init(userId: String) {
-        self.userId = userId
+    init(loginUsername: String) {
+        self.loginUsername = loginUsername
     }
 
     @MainActor
@@ -29,11 +31,14 @@ final class TxUserDetailViewModel: ObservableObject {
         isLoading = true
         Task { @MainActor in
             do {
-                let user = try await getUserDetailUseCase.getUserDetail(userId: userId)
-                self.user = user.toMapDetailUI()
-                self.isLoading = false
-                self.dataLoaded = true
+                try await TxApiClient.shared.performRequest(action: { @MainActor in
+                    let user = try await self.getUserDetailUseCase.getUserDetail(loginUsername: loginUsername)
+                    self.user = user.toMapDetailUI()
+                    self.isLoading = false
+                    self.dataLoaded = true
+                })
             } catch {
+                TxLogger().error(error)
                 self.errorMessage = error.localizedDescription
                 self.isLoading = false
             }

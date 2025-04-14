@@ -1,7 +1,7 @@
 import Foundation
 
 public struct TxGithubUser: Identifiable, Sendable {
-    public let id: String
+    public let id: Int
     public let name: String
     public let username: String
     public let avatarUrl: String
@@ -12,7 +12,7 @@ public struct TxGithubUser: Identifiable, Sendable {
     public let blogUrl: String
 
     public init(
-        id: String,
+        id: Int,
         name: String,
         username: String,
         avatarUrl: String,
