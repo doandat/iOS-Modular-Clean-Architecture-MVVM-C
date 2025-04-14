@@ -10,20 +10,42 @@ import Moya
 import TxLogger
 import TxNetworkModels
 
-public final class TxApiClient {
-    public typealias NetworkErrorAlertHandler = (
-        _ error: TxResponseError.NetworkErrorType,
-        _ onAlertNetworkAction: @escaping (TxResponseError.AlertActionNetworkError) -> Void
-    ) -> Void
-    public typealias CommonErrorAlertHandler = (
-        _ error: TxResponseError,
-        _ onAlertNetworkAction: @escaping (TxResponseError.AlertActionNetworkError) -> Void
-    ) -> Void
-    public typealias NetworkActionHandler = (
-        _ action: TxResponseError.AlertActionNetworkError,
-        _ error: TxResponseError
-    ) -> Void
+public typealias NetworkErrorAlertHandler = (
+    _ error: TxResponseError.NetworkErrorType,
+    _ onAlertNetworkAction: @escaping (TxResponseError.AlertActionNetworkError) -> Void
+) -> Void
+public typealias CommonErrorAlertHandler = (
+    _ error: TxResponseError,
+    _ onAlertNetworkAction: @escaping (TxResponseError.AlertActionNetworkError) -> Void
+) -> Void
+public typealias NetworkActionHandler = (
+    _ action: TxResponseError.AlertActionNetworkError,
+    _ error: TxResponseError
+) -> Void
 
+
+public protocol TxApiClientProtocol {
+    @MainActor
+    var onLoading: (Bool) async -> Void { set get }
+    @MainActor
+    var alertErrorNetworkConnection: NetworkErrorAlertHandler { set get }
+    @MainActor
+    var alertErrorNetworkCommon: CommonErrorAlertHandler { set get }
+    @MainActor
+    var onAlertNetworkAction: NetworkActionHandler { set get }
+    
+    @MainActor
+    @discardableResult
+    func performRequest<R: Sendable>(
+        action: () async throws -> R,
+        loading: ((Bool) async -> Void)?,
+        alertErrorNetworkConnection: NetworkErrorAlertHandler?,
+        alertErrorNetworkCommon: CommonErrorAlertHandler?,
+        onAlertNetworkAction: NetworkActionHandler?
+    ) async throws -> R?
+}
+
+public final class TxApiClient: TxApiClientProtocol {
     public init() {}
 
     @MainActor
@@ -35,8 +57,8 @@ public final class TxApiClient {
     @MainActor
     public var onAlertNetworkAction: NetworkActionHandler = { _, _ in }
 
-    @discardableResult
     @MainActor
+    @discardableResult
     public func performRequest<R: Sendable>(
         action: () async throws -> R,
         loading: ((Bool) async -> Void)? = nil,

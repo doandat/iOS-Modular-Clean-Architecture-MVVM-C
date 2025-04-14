@@ -30,14 +30,16 @@ extension TxGitAdminApp {
     func setupDI() {
         Resolver.register { TxThemeManager() }.scope(ResolverScope.application)
         Resolver.register { L10n() }.scope(ResolverScope.application)
-        Resolver.register { TxApiClient() }.scope(ResolverScope.application)
+        let apiClient = TxApiClient()
+        Resolver.register { apiClient }.scope(ResolverScope.application)
+        Resolver.register { apiClient as TxApiClientProtocol }.scope(ResolverScope.application)
         Resolver.register { TxDeepLinksService() as TxDeepLinksServiceProtocol }.scope(ResolverScope.application)
         TxGithubProfiles.Configuration().register()
     }
 
     func setupNetwork() {
         let l10n = Resolver.resolve(L10n.self)
-        let apiClient = Resolver.resolve(TxApiClient.self)
+        let apiClient: TxApiClient = Resolver.resolve(TxApiClient.self)
         
         apiClient.onLoading = { @MainActor isLoading in
             TxLogger().debug("isLoading: \(isLoading)")

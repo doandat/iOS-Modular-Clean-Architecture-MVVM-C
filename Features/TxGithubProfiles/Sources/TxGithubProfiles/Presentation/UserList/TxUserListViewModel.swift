@@ -8,7 +8,7 @@ import TxLogger
 final class TxUserListViewModel: ObservableObject {
     @Published private(set) var userListState: UserListState = .loading
     var users: [TxUserItemUIModel] = []
-    private var lastestUserId = 0
+    private(set) var lastestUserId = 0
     var isLoading = false
     @Published var hasMoreData = false
     
@@ -33,26 +33,31 @@ final class TxUserListViewModel: ObservableObject {
         lastestUserId = 0
         Task { @MainActor in
             do {
-                let apiClient = Resolver.resolve(TxApiClient.self)
-                try await apiClient.performRequest(action: { @MainActor in
-                    let newUsers = try await getUsersUseCase.getUsers(
-                        since: self.lastestUserId,
-                        pageSize: TxGithubConstants.pageSize
-                    )
-                    self.users = newUsers.map { $0.toMapListUI() }
-                    self.userListState = .data(self.users)
-                    self.isLoading = false
-                    if let lastestUserId = newUsers.last?.id {
-                        self.lastestUserId = lastestUserId
-                    }
-                    self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
-                    
-                }, loading: { [weak self] loading in
-                    self?.isLoading = loading
-                }, onAlertNetworkAction: { [weak self] action, _ in
-                    guard action == .retry else { return }
-                    self?.loadInitialUsers()
-                })
+                let apiClient = Resolver.resolve(TxApiClientProtocol.self)
+                TxLogger().debug(apiClient)
+                try await apiClient.performRequest(
+                    action: {
+                        let newUsers = try await getUsersUseCase.getUsers(
+                            since: self.lastestUserId,
+                            pageSize: TxGithubConstants.pageSize
+                        )
+                        self.users = newUsers.map { $0.toMapListUI() }
+                        self.userListState = .data(self.users)
+                        self.isLoading = false
+                        if let lastestUserId = newUsers.last?.id {
+                            self.lastestUserId = lastestUserId
+                        }
+                        self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
+                    },
+                    loading: { [weak self] loading in
+                        self?.isLoading = loading
+                    },
+                    alertErrorNetworkConnection: nil,
+                    alertErrorNetworkCommon: nil,
+                    onAlertNetworkAction: { [weak self] action, _ in
+                        guard action == .retry else { return }
+                        self?.loadInitialUsers()
+                    })
             } catch {
                 TxLogger().error(error)
                 self.isLoading = false
@@ -76,25 +81,30 @@ final class TxUserListViewModel: ObservableObject {
         
         Task { @MainActor in
             do {
-                let apiClient = Resolver.resolve(TxApiClient.self)
-                try await apiClient.performRequest(action: { @MainActor in
-                    let newUsers = try await getUsersUseCase.getUsers(
-                        since: self.lastestUserId,
-                        pageSize: TxGithubConstants.pageSize
-                    )
-                    self.users += newUsers.map { $0.toMapListUI() }
-                    self.userListState = .data(self.users)
-                    self.isLoading = false
-                    if let lastestUserId = newUsers.last?.id {
-                        self.lastestUserId = lastestUserId
-                    }
-                    self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
-                }, loading: { [weak self] loading in
-                    self?.isLoading = loading
-                }, onAlertNetworkAction: { [weak self] action, _ in
-                    guard action == .retry else { return }
-                    self?.loadMoreData()
-                })
+                let apiClient = Resolver.resolve(TxApiClientProtocol.self)
+                try await apiClient.performRequest(
+                    action: { @MainActor in
+                        let newUsers = try await getUsersUseCase.getUsers(
+                            since: self.lastestUserId,
+                            pageSize: TxGithubConstants.pageSize
+                        )
+                        self.users += newUsers.map { $0.toMapListUI() }
+                        self.userListState = .data(self.users)
+                        self.isLoading = false
+                        if let lastestUserId = newUsers.last?.id {
+                            self.lastestUserId = lastestUserId
+                        }
+                        self.hasMoreData = newUsers.count == TxGithubConstants.pageSize
+                    },
+                    loading: { [weak self] loading in
+                        self?.isLoading = loading
+                    },
+                    alertErrorNetworkConnection: nil,
+                    alertErrorNetworkCommon: nil,
+                    onAlertNetworkAction: { [weak self] action, _ in
+                        guard action == .retry else { return }
+                        self?.loadMoreData()
+                    })
             } catch {
                 TxLogger().error(error)
                 self.isLoading = false
@@ -103,7 +113,7 @@ final class TxUserListViewModel: ObservableObject {
                     title: "githubprofile.alert.common.title".localization(),
                     message: "githubprofile.alert.common.error.message".localization(),
                     retryAction: { [weak self] in
-                        self?.loadInitialUsers()
+                        self?.loadMoreData()
                     },
                     closeAction: {}
                 )

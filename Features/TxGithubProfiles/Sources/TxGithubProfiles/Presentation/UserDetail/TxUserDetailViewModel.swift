@@ -30,13 +30,17 @@ final class TxUserDetailViewModel: ObservableObject {
         isLoading = true
         Task { @MainActor in
             do {
-                let apiClient = Resolver.resolve(TxApiClient.self)
-                try await apiClient.performRequest(action: { @MainActor in
-                    let user = try await self.getUserDetailUseCase.getUserDetail(loginUsername: loginUsername)
-                    self.user = user.toMapDetailUI()
-                    self.isLoading = false
-                    self.dataLoaded = true
-                }, onAlertNetworkAction: { [weak self] action, _ in
+                let apiClient = Resolver.resolve(TxApiClientProtocol.self)
+                try await apiClient.performRequest(
+                    action: { @MainActor in
+                        let user = try await self.getUserDetailUseCase.getUserDetail(loginUsername: loginUsername)
+                        self.user = user.toMapDetailUI()
+                        self.isLoading = false
+                        self.dataLoaded = true
+                    }, loading: nil,
+                    alertErrorNetworkConnection: nil,
+                    alertErrorNetworkCommon: nil,
+                    onAlertNetworkAction: { [weak self] action, _ in
                     self?.isLoading = false
                     guard action == .retry else { return }
                     self?.fetchUserDetail()

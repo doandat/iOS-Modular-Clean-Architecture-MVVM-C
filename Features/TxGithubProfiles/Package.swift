@@ -17,6 +17,7 @@ let package = Package(
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins.git", exact: "0.57.1"),
         .package(url: "https://github.com/hmlongco/Resolver.git", exact: "1.5.1"),
         .package(url: "https://github.com/kean/Nuke", exact: "12.8.0"),
+        .package(url: "https://github.com/nalexn/ViewInspector", from: "0.9.10"),
         .package(path: "../../Packages/TxDesignSystem"),
         .package(path: "../../Packages/TxLogger"),
         .package(path: "../../Packages/TxFoundation"),
@@ -51,7 +52,10 @@ let package = Package(
         ),
         .testTarget(
             name: "TxGithubProfilesTests",
-            dependencies: ["TxGithubProfiles"]
+            dependencies: [
+                "TxGithubProfiles",
+                "ViewInspector"
+            ]
         ),
     ]
 )
