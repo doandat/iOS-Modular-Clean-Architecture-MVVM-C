@@ -48,6 +48,7 @@ struct TxUserItemView: View {
             }
             .frame(width: 90, height: 90)
             .clipShape(Circle())
+            .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserItem.avatar)
         }
     }
 
@@ -68,6 +69,7 @@ struct TxUserItemView: View {
             Text(user.name)
                 .modifier(TxFont.style(TxFont.Typography.titleSemibold()))
                 .foregroundColor(themeManager.selectedColor.textPrimary)
+                .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserItem.name)
             switch type {
             case .list:
                 if !user.landingPageUrl.isEmpty {
@@ -76,6 +78,7 @@ struct TxUserItemView: View {
                         .underline()
                         .modifier(TxFont.style(TxFont.Typography.smallRegular()))
                         .foregroundColor(.blue)
+                        .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserItem.landingPageUrl)
                 }
             case .detail:
                 if !user.location.isEmpty {
@@ -88,6 +91,7 @@ struct TxUserItemView: View {
                         Text(user.location)
                             .modifier(TxFont.style(TxFont.Typography.smallRegular()))
                             .foregroundColor(themeManager.selectedColor.textSecondary)
+                            .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserItem.location)
                     }
                 }
             }

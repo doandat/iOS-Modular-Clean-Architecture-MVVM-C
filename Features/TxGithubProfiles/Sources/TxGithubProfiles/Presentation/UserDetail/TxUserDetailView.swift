@@ -15,16 +15,23 @@ struct TxUserDetailView: TxView {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            TxDesignSystem.UIComponent.TxNavigationView(title: "githubprofile.user.detail.title".localization()) {
+            TxDesignSystem.UIComponent.TxNavigationView(
+                title: "githubprofile.user.detail.title".localization(),
+                backButtonIdentifier: TxAccessibility.GithubProfiles.UserDetail.backButton,
+                titleIdentifier: TxAccessibility.GithubProfiles.UserDetail.title
+            ) {
                 viewModel.goBack()
             }
             if let user = viewModel.user {
                 TxUserItemView(user: user.baseInfo, type: .detail)
                     .padding(.vertical, TxSize.size400.rawValue)
+                    .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.userCell)
                 followView(user: user)
                     .padding(.horizontal, TxSize.size600.rawValue)
+                    .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.followCell)
                 blogView(user: user)
                     .padding(.horizontal, TxSize.size600.rawValue)
+                    .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.blogCell)
             }
             Spacer()
         }
@@ -43,12 +50,13 @@ struct TxUserDetailView: TxView {
                 icon: .iconUserGroup,
                 followValue: user.followers,
                 followLabel: "githubprofile.user.detail.follower".localization()
-            )
+            ).accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.follower)
+
             TxFollowItemView(
                 icon: .iconAchievement,
                 followValue: user.following,
                 followLabel: "githubprofile.user.detail.following".localization()
-            )
+            ).accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.following)
         }
         .padding()
     }
@@ -58,9 +66,11 @@ struct TxUserDetailView: TxView {
             Text("githubprofile.user.detail.blog".localization())
                 .modifier(TxFont.style(TxFont.Typography.h4Medium()))
                 .foregroundColor(themeManager.selectedColor.textPrimary)
+                .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.blogTitle)
             Text(viewModel.user?.blogUrl ?? "")
                 .modifier(TxFont.style(TxFont.Typography.baseRegular()))
                 .foregroundColor(themeManager.selectedColor.textSecondary)
+                .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserDetail.BlogLink)
         }
     }
 }

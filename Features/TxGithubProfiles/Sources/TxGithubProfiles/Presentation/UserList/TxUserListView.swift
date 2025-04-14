@@ -8,19 +8,22 @@ import TxLogger
 import TxLocalization
 
 struct TxUserListView: TxView {
-    init(viewModel: TxUserListViewModel) {
-        self.viewModel = viewModel
-        TxLogger().debug("TxUserListView init")
-    }
     var identifier: String = String(describing: Self.self)
     @ObservedObject var viewModel: TxUserListViewModel
     @EnvironmentObject private var l10n: L10n
     @EnvironmentObject private var themeManager: TxThemeManager
 
+    init(viewModel: TxUserListViewModel) {
+        self.viewModel = viewModel
+        TxLogger().debug("TxUserListView init")
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             TxDesignSystem.UIComponent.TxNavigationView(
-                title: "githubprofile.user.list.title".localization()
+                title: "githubprofile.user.list.title".localization(),
+                backButtonIdentifier: TxAccessibility.GithubProfiles.UserList.backButton,
+                titleIdentifier: TxAccessibility.GithubProfiles.UserList.title
             ).padding(.bottom, TxSize.size200.rawValue)
             contentView
         }
@@ -50,6 +53,7 @@ struct TxUserListView: TxView {
             .cornerRadius(TxSize.size300.rawValue)
             .frame(maxHeight: .infinity)
             .padding(TxSize.size400.rawValue)
+            .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserList.shimmer)
     }
 
     @ViewBuilder
@@ -57,6 +61,7 @@ struct TxUserListView: TxView {
         if users.isEmpty {
             Spacer()
             Text("githubprofile.user.list.empty".localization())
+                .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserList.empty)
             Spacer()
         } else {
             List {
@@ -77,6 +82,7 @@ struct TxUserListView: TxView {
                             .onTapGesture {
                                 viewModel.gotoDetail(loginUsername: user.loginUsername)
                             }
+                            .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserList.userCell)
                     }
                     loadingMoreView
                 } footer: {
@@ -88,6 +94,7 @@ struct TxUserListView: TxView {
             .refreshable {
                 viewModel.loadInitialUsers()
             }
+            .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserList.list)
         }
     }
 
@@ -107,6 +114,7 @@ struct TxUserListView: TxView {
                 .onAppear {
                     viewModel.loadMoreData()
                 }
+                .accessibilityIdentifier(TxAccessibility.GithubProfiles.UserList.loadMore)
         }
     }
 
