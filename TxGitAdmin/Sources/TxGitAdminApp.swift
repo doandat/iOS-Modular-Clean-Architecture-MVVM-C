@@ -28,7 +28,7 @@ struct TxGitAdminApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TxNavigationContainerView(rootView: AnyView(DeepLinksService.shared.getRootView()))
+            TxNavigationContainerView(rootView: AnyView(TxDeepLinksService.getRootView()))
                 .ignoresSafeArea()
                 .environmentObject(Resolver.resolve(TxThemeManager.self))
                 .environmentObject(Resolver.resolve(L10n.self))

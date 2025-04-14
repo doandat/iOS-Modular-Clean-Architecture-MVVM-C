@@ -18,8 +18,8 @@ public struct TxGithubUser: Identifiable, Sendable {
         avatarUrl: String,
         landingPageUrl: String,
         location: String,
-        followers: Int = 0,
-        following: Int = 0,
+        followers: Int,
+        following: Int,
         blogUrl: String
     ) {
         self.id = id

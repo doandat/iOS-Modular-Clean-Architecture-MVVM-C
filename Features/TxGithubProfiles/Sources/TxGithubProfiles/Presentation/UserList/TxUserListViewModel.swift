@@ -34,7 +34,8 @@ final class TxUserListViewModel: ObservableObject {
         lastestUserId = 0
         Task { @MainActor in
             do {
-                try await TxApiClient.shared.performRequest(action: { @MainActor in
+                let apiClient = Resolver.resolve(TxApiClient.self)
+                try await apiClient.performRequest(action: { @MainActor in
                     let newUsers = try await getUsersUseCase.getUsers(
                         since: self.lastestUserId,
                         pageSize: TxGithubConstants.pageSize
@@ -68,7 +69,8 @@ final class TxUserListViewModel: ObservableObject {
 
         Task { @MainActor in
             do {
-                try await TxApiClient.shared.performRequest(action: { @MainActor in
+                let apiClient = Resolver.resolve(TxApiClient.self)
+                try await apiClient.performRequest(action: { @MainActor in
                     let newUsers = try await getUsersUseCase.getUsers(
                         since: self.lastestUserId,
                         pageSize: TxGithubConstants.pageSize

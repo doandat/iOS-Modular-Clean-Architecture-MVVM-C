@@ -24,10 +24,7 @@ public final class TxApiClient {
         _ error: TxResponseError
     ) -> Void
 
-
-    @MainActor public static let shared = TxApiClient()
-
-    private init() {}
+    public init() {}
 
     @MainActor
     public var onLoading: (Bool) async -> Void = { _ in }

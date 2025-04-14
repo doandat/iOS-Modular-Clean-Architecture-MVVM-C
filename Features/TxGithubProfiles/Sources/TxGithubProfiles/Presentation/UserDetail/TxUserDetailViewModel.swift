@@ -31,7 +31,8 @@ final class TxUserDetailViewModel: ObservableObject {
         isLoading = true
         Task { @MainActor in
             do {
-                try await TxApiClient.shared.performRequest(action: { @MainActor in
+                let apiClient = Resolver.resolve(TxApiClient.self)
+                try await apiClient.performRequest(action: { @MainActor in
                     let user = try await self.getUserDetailUseCase.getUserDetail(loginUsername: loginUsername)
                     self.user = user.toMapDetailUI()
                     self.isLoading = false

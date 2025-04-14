@@ -7,14 +7,16 @@
 
 import SwiftUI
 import UIKit
+import Resolver
 
 struct TxNavigationContainerView<Content: View>: UIViewControllerRepresentable {
     let rootView: Content
 
     func makeUIViewController(context: Context) -> UINavigationController {
         let hostingController = UIHostingController(rootView: rootView)
+        var deeplinkService = Resolver.resolve(TxDeepLinksServiceProtocol.self)
         let navigationController = UINavigationController(rootViewController: hostingController)
-        DeepLinksService.shared.rootViewController = navigationController
+        deeplinkService.rootViewController = navigationController
 
         return navigationController
     }

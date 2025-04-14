@@ -1,5 +1,5 @@
 //
-//  DeepLinksService.swift
+//  TxDeepLinksService.swift
 //  TxGitAdmin
 //
 //  Created by doandat on 10/4/25.
@@ -12,9 +12,15 @@ import Resolver
 import TxDeeplink
 import TxGithubProfiles
 
-final class DeepLinksService: TxDeeplinkCoordinatorProtocol {
-    static let shared = DeepLinksService()
-    
+public protocol TxDeepLinksServiceProtocol {
+    @MainActor @discardableResult
+    func handleURL(_ url: URL) -> Bool
+    func canOpenURL(_ url: URL) -> Bool
+    var rootViewController: UINavigationController? { get set }
+}
+
+
+final class TxDeepLinksService: TxDeepLinksServiceProtocol {
     var pendingDeeplink: URL?
     
     var rootViewController: UINavigationController? {
@@ -42,7 +48,7 @@ final class DeepLinksService: TxDeeplinkCoordinatorProtocol {
         return deepLinkCoordinator.canOpenURL(url)
     }
 
-    @MainActor func getRootView() -> any View {
+    @MainActor static func getRootView() -> any View {
         return TxGithubProfileCoordinator.getRootView()
     }
 

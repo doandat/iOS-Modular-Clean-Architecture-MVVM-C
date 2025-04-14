@@ -17,13 +17,13 @@ extension TxGithubProfiles {
 
         @MainActor
         public func register() {
-            let settingsManagerService: TxGithubUserManagerService = {
+            let userManagerService: TxGithubUserManagerService = {
                 return TxGithubUserManagerService(
                     baseURL: TxEnvironmentValues.apiHost
                 )
             }()
 
-            let repository = TxUserRepositoryImpl(remoteDataSource: settingsManagerService)
+            let repository = TxUserRepositoryImpl(remoteDataSource: userManagerService)
             Resolver.register { repository as TxUserRepository }
 
             let getUsersUseCase = TxGetUsersUseCaseImpl()

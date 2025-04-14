@@ -30,12 +30,16 @@ extension TxGitAdminApp {
     func setupDI() {
         Resolver.register { TxThemeManager() }.scope(ResolverScope.application)
         Resolver.register { L10n() }.scope(ResolverScope.application)
+        Resolver.register { TxApiClient() }.scope(ResolverScope.application)
+        Resolver.register { TxDeepLinksService() as TxDeepLinksServiceProtocol }.scope(ResolverScope.application)
         TxGithubProfiles.Configuration().register()
     }
 
     func setupNetwork() {
         let l10n = Resolver.resolve(L10n.self)
-        TxApiClient.shared.onLoading = { @MainActor isLoading in
+        let apiClient = Resolver.resolve(TxApiClient.self)
+        
+        apiClient.onLoading = { @MainActor isLoading in
             TxLogger().debug("isLoading: \(isLoading)")
             if isLoading {
                 TxLoading.show()
@@ -44,7 +48,7 @@ extension TxGitAdminApp {
             }
         }
 
-        TxApiClient.shared.alertErrorNetworkCommon = {
+        apiClient.alertErrorNetworkCommon = {
             @MainActor networkError,
             onAlertNetworkAction in
             TxLogger().debug("alertErrorNetworkCommon: \(networkError)")
@@ -59,7 +63,7 @@ extension TxGitAdminApp {
                 })
         }
 
-        TxApiClient.shared.alertErrorNetworkConnection = { @MainActor networkError, onAlertNetworkAction in
+        apiClient.alertErrorNetworkConnection = { @MainActor networkError, onAlertNetworkAction in
             TxLogger().debug("alertErrorNetworkConnection: \(networkError)")
             self.showAlert(title: l10n.localized(
                 key: "main.alert.common.title",
@@ -80,7 +84,8 @@ extension TxGitAdminApp {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
             action()
         }))
-        DeepLinksService.shared.rootViewController?.present(alert, animated: false, completion: nil)
+        let deeplinkService = Resolver.resolve(TxDeepLinksServiceProtocol.self)
+        deeplinkService.rootViewController?.present(alert, animated: false, completion: nil)
 
     }
 }
