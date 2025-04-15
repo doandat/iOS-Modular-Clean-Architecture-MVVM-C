@@ -1,5 +1,5 @@
 import XCTest
-@testable import TxNetworking
+@testable import TxApiClient
 
 final class TxNetworkingTests: XCTestCase {
     func testExample() throws {

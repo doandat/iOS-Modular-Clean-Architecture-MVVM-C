@@ -74,7 +74,10 @@ let package = Package(
         ),
         .testTarget(
             name: "TxNetworkingTests",
-            dependencies: ["TxGithubUserManagerService"]
+            dependencies: [
+                "TxGithubUserManagerService",
+                .product(name: "Moya", package: "Moya")
+            ]
         ),
     ]
 )

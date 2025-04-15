@@ -10,7 +10,7 @@ import Foundation
 ///
 /// This struct contains all the fields returned by the GitHub API for a user,
 /// including their profile information, social links, and statistics.
-public struct TxGithubUserDTO: Decodable {
+public struct TxGithubUserDTO: Codable {
     /// The username of the GitHub user
     public let login: String?
     
@@ -129,32 +129,32 @@ public struct TxGithubUserDTO: Decodable {
     public init(
         login: String?,
         id: Int?,
-        node_id: String?,
+        node_id: String? = nil,
         avatar_url: String?,
-        gravatar_id: String?,
-        url: String?,
-        html_url: String?,
-        followers_url: String?,
-        following_url: String?,
-        gists_url: String?,
-        starred_url: String?,
-        subscriptions_url: String?,
-        organizations_url: String?,
-        repos_url: String?,
-        events_url: String?,
-        received_events_url: String?,
-        site_admin: Bool?,
-        name: String?,
-        company: String?,
-        blog: String?,
-        location: String?,
-        email: String?,
-        bio: String?,
-        twitter_username: String?,
-        public_repos: Int?,
-        public_gists: Int?,
-        followers: Int?,
-        following: Int?
+        gravatar_id: String? = nil,
+        url: String? = nil,
+        html_url: String? = nil,
+        followers_url: String? = nil,
+        following_url: String? = nil,
+        gists_url: String? = nil,
+        starred_url: String? = nil,
+        subscriptions_url: String? = nil,
+        organizations_url: String? = nil,
+        repos_url: String? = nil,
+        events_url: String? = nil,
+        received_events_url: String? = nil,
+        site_admin: Bool? = nil,
+        name: String? = nil,
+        company: String? = nil,
+        blog: String? = nil,
+        location: String? = nil,
+        email: String? = nil,
+        bio: String? = nil,
+        twitter_username: String? = nil,
+        public_repos: Int? = nil,
+        public_gists: Int? = nil,
+        followers: Int? = nil,
+        following: Int? = nil
     ) {
         self.login = login
         self.id = id
